@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Make The Rebuildable Part Obvious</title>
+  <meta name="description" content="One of the most practical questions an operator can ask before using AI in a real workflow is not, &quot;Can the AI do this task?&quot; It is, &quot;If this task goes wrong, what can it touch?&quot; That...">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html">Operating Notes</a>
+    <nav aria-label="Primary">
+      <a href="../../../index.html">Articles</a>
+    </nav>
+  </header>
+  <main>
+    <article class="article-page">
+      <p class="meta">2026-06-09 · Customer</p>
+<h1>Make The Rebuildable Part Obvious</h1>
+<p>One of the most practical questions an operator can ask before using AI in a real workflow is not, &quot;Can the AI do this task?&quot;</p>
+<p>It is, &quot;If this task goes wrong, what can it touch?&quot;</p>
+<p>That question shows up very quickly in technology work, but the same pattern applies to ordinary business operations. Some parts of the business are durable. Customer records, documents, account settings, permissions, addresses, vendor relationships, and audit history are not things you casually recreate. Other parts are closer to runtime. A temporary workspace, a draft report, a staging environment, a queue worker, or a generated file can usually be rebuilt if the important state is protected.</p>
+<p>AI becomes easier to trust when that difference is visible.</p>
+<p>I think a lot of SMB AI anxiety comes from systems that blur these layers. An assistant is asked to &quot;fix the app,&quot; &quot;clean up the files,&quot; &quot;update the customer workflow,&quot; or &quot;restart the integration,&quot; but nobody has defined which parts are safe to change and which parts must be preserved. That makes the AI feel risky even when the task itself is reasonable.</p>
+<p>The better pattern is to separate the durable foundation from the disposable runtime.</p>
+<p>For a deployed application, the durable layer might include the document store, network settings, identity configuration, reserved address, permissions, and audit trail. The runtime layer might be the machine running the app, a generated deployment bundle, a temporary database password, or a process that can be recreated from known inputs.</p>
+<p>For a non-technical workflow, the same idea still holds. The durable layer might be the customer file, signed agreement, invoice history, or approval policy. The runtime layer might be a draft response, proposed task list, temporary spreadsheet, or follow-up note waiting for review.</p>
+<p>Once those layers are separate, AI work becomes much more superviseable.</p>
+<p>You can ask the system to rebuild the runtime without giving it authority to delete the records. You can let it generate a new draft without letting it send the message. You can let it prepare a cleanup plan without letting it merge customer accounts. You can ask it to restart a process while preserving the address, documents, and permissions that make the business whole.</p>
+<p>That is the practical trust mechanism: not a vague promise that the AI will be careful, but a workflow where the risky parts are outside its operating boundary.</p>
+<p>This also changes how you measure the result. Instead of asking whether the assistant completed a broad task, you ask more specific questions:</p>
+<p>Did it operate on the rebuildable layer?</p>
+<p>Did it show the proposed change before applying it?</p>
+<p>Did it leave the durable state intact?</p>
+<p>Did it verify the result from the outside, the way a user or customer would experience it?</p>
+<p>That is a much better bar for SMB adoption than abstract accuracy. Most operators do not need AI to feel magical. They need it to be useful without creating a mess they cannot inspect.</p>
+<p>The first AI win in many businesses will not be full autonomy. It will be making the operational boundary clear enough that a person can safely delegate one step.</p>
+<p>Before adding AI to a workflow, draw one line: what must persist, and what can be rebuilt?</p>
+<p>That line is where trust starts.</p>
+    </article>
+  </main>
+</body>
+</html>
