@@ -21,6 +21,8 @@
 <p>One of the fastest ways to make an operator nervous is to show them an AI workflow that can change business records without showing exactly what changed.</p>
 <p>The fear is not irrational. In most small businesses, the current process is messy but legible to the people inside it. Someone remembers why a customer was moved to a different status. Someone knows who approved the exception. Someone can explain why the job was reassigned, why the invoice was delayed, or why a follow-up got skipped.</p>
 <p>That knowledge may live in a message thread, a spreadsheet note, or one manager&#x27;s head, but it is still part of the control system of the business.</p>
+<p>Think about a property manager moving a repair request from &quot;waiting on vendor&quot; to &quot;scheduled.&quot; If the tenant later calls, the manager needs to know who changed the status, which vendor confirmed, what time was offered, and whether the tenant approved access.</p>
+<p>For a home services company, the same trust issue appears when a warranty claim becomes a paid service call. The owner may want to know whether the change came from a technician note, a customer approval, a manager override, or an automatic rule.</p>
 <p>When AI enters that workflow, the first trust problem is not whether the model can produce a useful recommendation. The first trust problem is whether the business can inspect the change after it happens.</p>
 <p>This is where I think many AI projects start in the wrong place. They try to prove that the system can act. It can create the record, update the status, draft the response, assign the task, or move the work forward.</p>
 <p>That matters, but it is incomplete. A business does not just need action. It needs evidence.</p>
@@ -33,6 +35,7 @@
 <p>Who can reverse or escalate it?</p>
 <p>Those questions are not bureaucracy. They are how trust gets built when software starts participating in operations.</p>
 <p>Think about a simple approval workflow. If an assistant helps route a customer request, the team should not have to ask an engineer what happened. A manager should be able to open a review view, filter to the customer or workflow, see the event, compare before and after, and understand whether the action was automatic, suggested, or approved by a person.</p>
+<p>Back in the property-management example, the audit surface should show the repair status before and after, the vendor note that justified the change, and whether a person approved it. In the home services example, it should make the warranty-to-paid-service decision inspectable before the customer gets a confusing bill.</p>
 <p>That kind of audit trail is different from a raw system log. A log proves that something happened. An audit surface helps the business understand whether the right thing happened.</p>
 <p>The distinction matters because most operators do not want AI to be magic. They want it to be useful without becoming unaccountable. They are much more willing to try automation when the first few steps are observable, narrow, and reversible.</p>
 <p>This also changes the ROI conversation.</p>
