@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plan Linting Is An AI Operating Primitive</title>
+  <meta name="description" content="The pattern I keep seeing in real AI implementation work is that the plan often fails before the model does. The architecture may be directionally right. The product idea may be useful....">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html">Operating Notes</a>
+    <nav aria-label="Primary">
+      <a href="../../../index.html">Articles</a>
+    </nav>
+  </header>
+  <main>
+    <article class="article-page">
+      <p class="meta">2026-06-11 · Primitive</p>
+<h1>Plan Linting Is An AI Operating Primitive</h1>
+<p>The pattern I keep seeing in real AI implementation work is that the plan often fails before the model does.</p>
+<p>The architecture may be directionally right. The product idea may be useful. The automation may even be technically feasible. But the plan quietly assumes away the hard parts: the first lookup before context exists, the permission boundary between public and private work, the state change that needs to be atomic, the handoff that has no owner, the exception path that only lives in someone&#x27;s head.</p>
+<p>Those are not edge cases in AI systems of action. They are the product surface.</p>
+<p>A chatbot can survive vague plans because the user can notice when the answer is wrong and ask again. A system that acts on work cannot depend on that same forgiveness. Once software starts updating records, routing tasks, sending messages, creating approvals, or changing operational state, the plan needs stronger semantics.</p>
+<p>I think this creates an underrated primitive for the next generation of AI software: plan linting.</p>
+<p>By plan linting, I do not mean generic project management or a prettier checklist. I mean software that can inspect an intended workflow before execution and ask whether the plan is coherent against the business&#x27;s actual operating constraints.</p>
+<p>Does this step require context that has not been established yet?</p>
+<p>Does this lookup cross a permission boundary?</p>
+<p>Does this state change happen in the same transaction as the event that depends on it?</p>
+<p>Is there a human approval point before the customer-facing action?</p>
+<p>If the handoff fails, where does the work become visible?</p>
+<p>Those questions are mundane, which is why they matter. Real businesses do not break only because a model hallucinated. They break because authority, context, state, and escalation were implicit. Human teams paper over those gaps with memory and judgment. AI systems need them represented as software.</p>
+<p>This is a different frame from &quot;agents need better prompts.&quot; Prompts describe desired behavior. Operating plans define the path through context, permissions, state, feedback, and exception handling. If the plan has a contradiction, a more capable model may just execute the contradiction faster.</p>
+<p>The product implication is that the durable AI operating layer is not only retrieval, orchestration, or workflow automation. It is the layer that turns messy human intent into executable plans with inspectable constraints.</p>
+<p>That layer will need to know the difference between reading and changing state. It will need to model bootstrap paths, where the system is allowed to perform a narrow lookup before the broader context is available. It will need to recognize when two steps must be atomic rather than merely adjacent. It will need to surface missing owners and escalation paths before the workflow runs.</p>
+<p>This is especially relevant in SMB markets because so much of the operating system is informal. The official process may be a spreadsheet, an inbox, a shared drive, and a manager&#x27;s memory. The opportunity is not just to automate those businesses. It is to convert the judgment around those workflows into primitives the software can reason about.</p>
+<p>The best AI products will not simply ask, &quot;What should the agent do?&quot;</p>
+<p>They will ask, &quot;Is there a safe path for this action to happen?&quot;</p>
+<p>That is a higher bar, and it is a better business. Once a system can lint a plan for boundaries, bootstraps, transactions, approvals, and failed handoffs, it becomes more than a copilot. It becomes an operating layer that helps the company understand its own work before delegating pieces of it to machines.</p>
+<p>The useful reframe is that autonomy is not the starting point. Executable clarity is.</p>
+    </article>
+  </main>
+</body>
+</html>

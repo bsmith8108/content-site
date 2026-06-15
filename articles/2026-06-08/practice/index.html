@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Start With Read-Only AI</title>
+  <meta name="description" content="The AI workflows that make operators most nervous often start in the places where the real business lives: inboxes, text threads, call logs, shared spreadsheets, and notes from someone...">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html">Operating Notes</a>
+    <nav aria-label="Primary">
+      <a href="../../../index.html">Articles</a>
+    </nav>
+  </header>
+  <main>
+    <article class="article-page">
+      <p class="meta">2026-06-08 · Practice</p>
+<h1>Start With Read-Only AI</h1>
+<p>The AI workflows that make operators most nervous often start in the places where the real business lives: inboxes, text threads, call logs, shared spreadsheets, and notes from someone who has been handling exceptions for years.</p>
+<p>That nervousness is reasonable. Those systems contain personal details, customer history, informal commitments, pricing context, complaints, and things people never expected to become part of an automated workflow. If the first version of an AI project asks for broad access and vague authority, most operators should hesitate.</p>
+<p>I think the better starting point is much smaller: make the first AI step read-only, purpose-limited, and easy to inspect.</p>
+<p>For example, do not start with &quot;give the assistant access to messages.&quot; Start with &quot;for this specific workflow, pull messages from this known sender, in this date range, that mention scheduling, payment, or a job change, then show the extracted facts for human review.&quot; That is a different kind of system. It is not asking the business to trust AI with everything. It is asking whether a narrow retrieval step can reduce manual search.</p>
+<p>For a property manager, that might mean searching one building&#x27;s inbox for tenant messages about water leaks over the last seven days, then showing the likely unit numbers, photos, and vendor replies for review. It should not read every owner email, applicant document, or rent conversation just because they live in the same shared inbox.</p>
+<p>For a bookkeeping team, it might mean pulling invoices from one vendor address for one client and one month, then extracting invoice numbers, totals, and missing attachments. The first win is a shorter review queue, not an assistant with broad access to every client folder.</p>
+<p>That distinction matters because many SMB processes are already built on sensitive informal context. A dispatcher remembers which customer prefers a phone call. A bookkeeper knows which vendor always sends invoices from a different address. A manager has a text thread that explains why a job changed. The work is real, but it is trapped in places software does not usually see.</p>
+<p>AI can help with that, but the safe version is not autonomy first. It is controlled visibility first.</p>
+<p>A practical first workflow might look like this:</p>
+<p>1. Choose one business question the team already spends time answering. 2. Identify the smallest source of context needed to answer it. 3. Query only that source, only for the relevant people, keywords, or dates. 4. Extract facts into a reviewable format. 5. Require a human to approve anything that leaves the system or changes a record.</p>
+<p>This is not slower than &quot;real automation.&quot; It is how trust gets built. The current process probably already includes manual searching, copying, remembering, and second-guessing. If AI can turn a 20-minute hunt through messages into a one-minute review of likely facts, that is a useful improvement even before anything is fully automated.</p>
+<p>The supervision model is the point. A human can inspect a short list of extracted facts more reliably than they can inspect an invisible automation with broad access. The AI is not being trusted to decide what the business should do. It is being used to make the hidden context visible enough for a person to decide faster.</p>
+<p>In the property-management example, the reviewer can catch that one leak photo belongs to the wrong unit before a vendor is dispatched. In the bookkeeping example, the reviewer can see that a duplicate invoice was found but not posted. The workflow earns trust because the narrow slice is small enough to inspect.</p>
+<p>This also makes resistance easier to handle. Employees are often not afraid of &quot;AI&quot; in the abstract. They are afraid of a system reaching into sensitive places, misunderstanding context, and taking action without them. A read-only first step respects that fear. It says: we are not replacing judgment; we are reducing the amount of searching required before judgment can happen.</p>
+<p>For many small businesses, the first AI win will not be a dramatic autonomous agent. It will be a narrow workflow where sensitive context is retrieved, summarized into facts, and reviewed before action.</p>
+<p>The useful question is not &quot;What data can the AI access?&quot;</p>
+<p>It is &quot;What is the smallest slice of data the team can safely let it inspect to make one workflow easier?&quot;</p>
+    </article>
+  </main>
+</body>
+</html>

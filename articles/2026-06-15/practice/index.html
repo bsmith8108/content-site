@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Do Not Let One Example Become The Whole Workflow</title>
+  <meta name="description" content="One of the quiet ways AI projects go sideways is that the team keeps testing the same example. At first, that example is useful. It gives everyone something concrete to react to. A...">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html">Operating Notes</a>
+    <nav aria-label="Primary">
+      <a href="../../../index.html">Articles</a>
+    </nav>
+  </header>
+  <main>
+    <article class="article-page">
+      <p class="meta">2026-06-15 · Practice</p>
+<h1>Do Not Let One Example Become The Whole Workflow</h1>
+<p>One of the quiet ways AI projects go sideways is that the team keeps testing the same example.</p>
+<p>At first, that example is useful. It gives everyone something concrete to react to. A customer email comes in. A form is incomplete. A payment approval is missing. The AI summarizes the issue, routes it, or drafts the next step. People can finally see what the system might do.</p>
+<p>Then the example starts doing too much work.</p>
+<p>The demo keeps using the same clean request. The checklist assumes the same missing field. The review path is built around the same exception. The team starts to believe it understands the workflow because it understands one version of the workflow.</p>
+<p>Real operations do not behave that neatly.</p>
+<p>An independent insurance agency might receive what looks like a simple quote request. A business owner fills out the website form, forwards last year&#x27;s policy to a producer, and separately emails the service inbox with a new address. Is that one prospect, a duplicate request, a move, or a second location? The right AI workflow cannot be designed from &quot;new quote request&quot; as a generic category. It needs examples that show duplicate submissions, conflicting addresses, unclear ownership, and the point where the system should stop and ask for clarification.</p>
+<p>Or take a manufacturer handling customer follow-up after a quality issue. Sales wants to send the customer an update. Quality has new trial results in email. Production changed the process on paper. The corrective-action tracker still says pending. If the AI only learned from the clean example, it may produce a confident but stale update. The useful system has to know that customer follow-up is not just message writing. It is status reconciliation across disconnected sources.</p>
+<p>This is why I like starting AI work with a scenario bank.</p>
+<p>Not a giant strategy document. Not a list of industries. A practical inventory of real cases: the business type, the trigger, the messy details, the tools involved, the failure mode, the automation opportunity, and the question the workflow has to answer.</p>
+<p>The important part is that the bank should rotate. Track which examples you keep using. Notice when every conversation returns to the same property manager, the same invoice, or the same intake form. If one example has carried the last five discussions, it may be familiar, but it is no longer testing the shape of the workflow.</p>
+<p>For an operator, this is a simple way to make AI less abstract. Ask your team for twenty recent cases that were annoying, ambiguous, or slow. Do not polish them. Keep the blurry attachment, the duplicate request, the approval by text, the stale spreadsheet, the voicemail nobody saw, and the customer who changed details halfway through.</p>
+<p>Then sort them.</p>
+<p>Which cases are safe for the AI to handle automatically? Which ones should produce a draft for review? Which ones should trigger a missing-information request? Which ones should do nothing until a human decides?</p>
+<p>That exercise often reveals the real workflow faster than a process map. The examples show where judgment lives. They show which details change the outcome. They show where the current process depends on one person&#x27;s memory. They also give you a better way to measure whether the AI is improving anything.</p>
+<p>The goal is not to prove that AI can handle the easiest case. The goal is to reduce the amount of work that reaches a human in an incomplete, repetitive, or poorly prepared state.</p>
+<p>A scenario bank makes that visible. It lets the team say, &quot;We have tested duplicate quote requests, stale status updates, missing approvals, and unclear owners. We know which ones the system can route, which ones need review, and which ones should stop.&quot;</p>
+<p>That is a much healthier adoption path than asking everyone to trust a clever demo.</p>
+<p>If you are looking for a low-risk first step, start with the examples. Build the bank before you build the automation. The work your team actually sees is the best design material you have.</p>
+    </article>
+  </main>
+</body>
+</html>

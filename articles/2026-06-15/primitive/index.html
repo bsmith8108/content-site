@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scenario Inventory Is Becoming An AI Operating Primitive</title>
+  <meta name="description" content="The part of AI workflow design I keep paying more attention to is the example set. Not the polished demo examples. The real ones. The duplicate request that arrived through two channels....">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html">Operating Notes</a>
+    <nav aria-label="Primary">
+      <a href="../../../index.html">Articles</a>
+    </nav>
+  </header>
+  <main>
+    <article class="article-page">
+      <p class="meta">2026-06-15 · Primitive</p>
+<h1>Scenario Inventory Is Becoming An AI Operating Primitive</h1>
+<p>The part of AI workflow design I keep paying more attention to is the example set.</p>
+<p>Not the polished demo examples. The real ones. The duplicate request that arrived through two channels. The approval that happened in a text thread. The customer update that looked ready until someone noticed the tracker was stale. The intake form that was technically complete but operationally useless.</p>
+<p>These examples are usually treated as raw material for prompts, sales demos, QA notes, or onboarding conversations. I think they are becoming something more important: product state.</p>
+<p>If an AI system is going to move from answering questions to participating in work, it needs a structured understanding of the variation in that work. A few remembered anecdotes are not enough. The system and the team around it need scenario inventory: tagged cases, workflow types, failure modes, edge conditions, usage counts, coverage gaps, and review status.</p>
+<p>An insurance agency gives a simple example. &quot;Quote intake&quot; sounds like a clean workflow until a business owner submits a website form, forwards last year&#x27;s policy to a producer, and emails the service inbox with a different address. The system has to decide whether this is a duplicate, a move, or a second location. That decision depends on examples the team has actually seen, not an abstract description of quote intake.</p>
+<p>An injection molding supplier has the same shape in a different workflow. A customer asks for a corrective-action update after a recurring defect. Quality has fresh trial results in email. Production changed the process in a paper log. The corrective-action spreadsheet still says pending. If the product only has one clean &quot;send customer update&quot; example, it will miss the actual primitive: reconciling status across sources before communication goes out.</p>
+<p>The old software frame treats those as edge cases.</p>
+<p>The AI operating-system frame treats them as coverage requirements.</p>
+<p>This matters because AI products are unusually vulnerable to example overfitting. A team can build a prompt around the first convincing case. A founder can demo the same workflow for months. A customer can approve a pilot because the system handled the case everyone already understood. Then deployment starts and the workflow breaks on the second, third, and fourth kind of mess.</p>
+<p>That failure is not always a model-quality problem. Often it is an inventory problem. The product did not know what variation mattered. The evaluation set did not represent the operating surface. The team had no way to tell whether it was repeatedly testing the same pattern under different names.</p>
+<p>I think durable AI workflow products will make this explicit.</p>
+<p>They will treat scenarios as first-class objects. A scenario will have a workflow type, a business context, the trigger that starts work, the messy operational details, the systems involved, the failure mode, the automation opportunity, and the review question. It may also have metadata that sounds mundane but turns out to be powerful: when was this scenario last used, how many times has it informed a demo or evaluation, which tags are overrepresented, which workflow categories are thin, which cases have become stale.</p>
+<p>That metadata creates better product behavior.</p>
+<p>It helps onboarding teams avoid showing every customer the same generic example. It helps implementation teams ask for missing edge cases before building. It helps QA teams test real workflow variation instead of happy paths. It helps product teams see when the roadmap is being shaped by the loudest anecdote rather than the broadest pattern.</p>
+<p>For systems of action, this becomes even more important.</p>
+<p>When software only displays information, a narrow example set is limiting. When software drafts, routes, updates, escalates, or sends, a narrow example set becomes risky. The product has to know not only what action is possible, but which forms of variation should change that action.</p>
+<p>Scenario inventory is the bridge between field work and operating logic.</p>
+<p>It turns messy customer reality into a reusable design asset. It gives the team a way to ask, &quot;Have we seen enough of this workflow to automate any part of it?&quot; It also creates a healthier feedback loop after launch. Every exception can become a new scenario, every scenario can strengthen evaluation, and every evaluation can improve the product&#x27;s sense of what it is allowed to do.</p>
+<p>SMBs are a natural market for this because their workflows contain a lot of informal variation. The rules are real, but they are scattered across inboxes, spreadsheets, notes, and human memory. A product that can capture those examples and turn them into structured operating knowledge is doing more than configuring software. It is building the customer&#x27;s workflow map.</p>
+<p>That is why I would not dismiss scenario inventory as internal tooling.</p>
+<p>The next generation of AI companies will need more than prompts, tool calls, and permissions. They will need living maps of the cases their systems are expected to handle. The winners will know which examples they have seen, which ones they keep overusing, and which parts of the workflow are still underexplored.</p>
+<p>The question is not only, &quot;Can the system handle this example?&quot;</p>
+<p>The better question is, &quot;Does the product know whether this example represents the work?&quot;</p>
+    </article>
+  </main>
+</body>
+</html>
