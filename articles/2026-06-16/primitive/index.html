@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Practice And Primitive Are Different AI Products</title>
+  <meta name="description" content="A text message approving a material surcharge does not look like product architecture. It looks like a small business keeping work moving. The owner replies yes. The shop orders the...">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html">Operating Notes</a>
+    <nav aria-label="Primary">
+      <a href="../../../index.html">Articles</a>
+    </nav>
+  </header>
+  <main>
+    <article class="article-page">
+      <p class="meta">2026-06-16 · Primitive</p>
+<h1>Practice And Primitive Are Different AI Products</h1>
+<p>A text message approving a material surcharge does not look like product architecture. It looks like a small business keeping work moving.</p>
+<p>The owner replies yes. The shop orders the material. Production continues. Weeks later, someone has to decide whether that text is enough to bill the customer, whether it belongs on the current job, and whether a missing change order should hold the invoice.</p>
+<p>The pattern I keep seeing is that AI teams often collapse two different problems into one conversation. They talk about the practical workflow and the reusable system primitive as if they are the same thing. They are related, but they are not interchangeable.</p>
+<p>The practice layer is the field note. It asks: what can this operator safely do tomorrow? In the tool-and-die example, the answer might be to capture approvals from messages, attach them to jobs, flag missing paperwork, and route the invoice for human review. The unit of value is a cleaner handoff.</p>
+<p>The primitive layer is the system idea underneath that workflow. It asks: what reusable capability did we just uncover? In this case, the primitive is not &quot;billing automation.&quot; It is approval evidence as workflow state. The system needs to know who approved, what they approved, which business object it changes, what artifact is still missing, and who can resolve the gap.</p>
+<p>That distinction matters because the old software frame tends to turn every problem into a feature category. Billing. Purchasing. Email. Reporting. Tasks. Those categories are useful for navigation, but they hide the operating layer underneath the work.</p>
+<p>A cabinet shop buying custom hardware from an expired quote is not only a purchasing issue. It is also a state-boundary issue. The quote looked valid enough to act on, but the margin risk changed. The workflow needs to compare quote date, vendor invoice, job margin, approval owner, and exception status. The reusable primitive is not a prettier purchase order screen. It is a way to represent stale evidence before it becomes an expensive action.</p>
+<p>This is why I like the practice/primitive split for thinking about AI systems.</p>
+<p>Practice keeps the product honest. It prevents the team from wandering into abstract agent language before the workflow is legible. What is the current mess? What does the human do now? Where does judgment live? What would make the next decision easier to inspect?</p>
+<p>Primitive keeps the product from becoming a pile of one-off automations. It asks what durable operating layer is forming underneath the examples. Is this really about approval evidence? Exception routing? Confidence thresholds? Permissioned state changes? Reviewable memory? Escalation?</p>
+<p>The best AI products will need both. If they only have practice, they may produce helpful services that never compound into software leverage. If they only have primitives, they may produce elegant architecture that operators do not trust because it never touches a painful workflow clearly enough.</p>
+<p>SMBs are especially good places to see this because their operations are full of undocumented judgment. The approval lives in a text thread. The purchasing risk sits in an old quote. The margin decision depends on one person&#x27;s memory. The business does not think of these as primitives. It thinks of them as Tuesday.</p>
+<p>But that is exactly where the next software layer is hiding. AI systems of action will not be defined only by the model or the chat interface. They will be defined by whether they can turn informal judgment into permissioned, reviewable, stateful workflow.</p>
+<p>The useful reframe is this: every concrete AI workflow should produce two artifacts of thought.</p>
+<p>The first is the practice answer: what can a human trust and review now?</p>
+<p>The second is the primitive answer: what reusable operating layer did this workflow reveal?</p>
+<p>When those stay separate, the product gets sharper. Operators get a safer next step. Builders get a more durable system. And the messy little approval sitting in a text thread stops being a corner case and starts becoming software.</p>
+    </article>
+  </main>
+</body>
+</html>
