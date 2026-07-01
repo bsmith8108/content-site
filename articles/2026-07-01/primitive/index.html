@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH9P7FYYR1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FH9P7FYYR1');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Evidence-Specific Review Is An AI Operations Primitive</title>
+  <meta name="description" content="One pattern I keep seeing in operational AI work is that the channel is usually the wrong abstraction. A customer calls. Another texts. A PDF arrives. A voicemail contains the missing...">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html">Operating Notes</a>
+    <nav aria-label="Primary">
+      <a href="../../../index.html">Articles</a>
+    </nav>
+  </header>
+  <main>
+    <article class="article-page">
+      <p class="meta">2026-07-01 · Primitive</p>
+<h1>Evidence-Specific Review Is An AI Operations Primitive</h1>
+<p>One pattern I keep seeing in operational AI work is that the channel is usually the wrong abstraction.</p>
+<p>A customer calls. Another texts. A PDF arrives. A voicemail contains the missing detail. A staff member adds a note somewhere else. Traditional software tends to preserve those boundaries because the systems were bought that way: phone system, inbox, CRM, ticket queue, scheduling tool, billing tool.</p>
+<p>But the business does not actually need &quot;the SMS workflow&quot; and &quot;the call workflow&quot; as separate operating surfaces. It needs a way to decide what should happen next.</p>
+<p>That sounds simple until you look at the evidence.</p>
+<p>A furniture shop may have a customer punch list split across owner texts, designer email, installer notes, project folders, and invoice status. A clinic may have a referral fax, a voicemail from the patient, an unreadable insurance card, and a missing lab record. In both cases, the work is not one message. It is a decision package.</p>
+<p>This is where I think a lot of AI product design gets pulled in the wrong direction. The obvious move is to build channel agents: a phone agent, a texting agent, an email agent, a document agent. Each one gets better at its input type. Each one produces a summary, a draft, or a suggested action.</p>
+<p>That is useful, but it does not solve the operating problem by itself.</p>
+<p>The operating problem is that a human needs to review a piece of work with enough context to trust the next action. The context is not uniform. A call item may need a transcript, recording, caller identity, requested person, and captured fields. A text item may need the full thread and an inline reply path. A referral item may need document completeness, missing criteria, and callback language. A punch-list item may need photos, owner, trade, and invoice dependency.</p>
+<p>The primitive underneath this is evidence-specific review state.</p>
+<p>It has two halves that are easy to confuse.</p>
+<p>The first half is unification. Work should land in one queue when it competes for the same human attention. Operators should not have to remember that missed calls live in one tab, customer texts in another, follow-up tasks in a third, and approval exceptions somewhere else. Fragmented review surfaces create fragmented accountability.</p>
+<p>The second half is specificity. One queue does not mean one generic card. The system has to preserve the proof, controls, and action paths that make sense for the underlying evidence. Otherwise the queue becomes another abstraction layer that hides the thing the human is supposed to inspect.</p>
+<p>That is the product line I find interesting. AI systems of action will not be trusted just because they route work into a dashboard. They will be trusted when the dashboard can answer: why is this here, what evidence supports it, what is missing, who owns it, what action is allowed, and what happens after approval?</p>
+<p>For SMBs, this matters because so much work is already cross-channel. The customer does not care whether the business internally treats a voicemail, text, and emailed photo as different systems. The customer cares whether the business remembers the context and responds correctly. The operator cares whether the team can review the situation without reconstructing it from five tools.</p>
+<p>This also changes how to think about vertical AI software.</p>
+<p>The durable product surface may not be the bot that answers the phone or the model that summarizes the message. Those can become features. The more durable layer is the review state that turns messy evidence into human-supervised action. It knows which evidence matters for this kind of decision. It knows what can be shown automatically and what needs verification. It knows whether the next step is reply, assign, hold, bill, schedule, or escalate.</p>
+<p>That is not just UI. It is an operating layer.</p>
+<p>The useful reframe is that channels are inputs, not products. The product is the reviewable decision state that sits after the signal arrives and before the business acts.</p>
+    </article>
+  </main>
+</body>
+</html>
