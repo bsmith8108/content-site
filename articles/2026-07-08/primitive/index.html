@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH9P7FYYR1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FH9P7FYYR1');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Approval Evidence Is An AI Operations Primitive</title>
+  <meta name="description" content="The more AI systems move from drafting into acting, the less satisfied I am with the phrase &quot;human in the loop.&quot; It sounds safe, but it hides the important product question: what exactly...">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html">Operating Notes</a>
+    <nav aria-label="Primary">
+      <a href="../../../index.html">Articles</a>
+    </nav>
+  </header>
+  <main>
+    <article class="article-page">
+      <p class="meta">2026-07-08 · Primitive</p>
+<h1>Approval Evidence Is An AI Operations Primitive</h1>
+<p>The more AI systems move from drafting into acting, the less satisfied I am with the phrase &quot;human in the loop.&quot;</p>
+<p>It sounds safe, but it hides the important product question: what exactly is the human reviewing?</p>
+<p>In ordinary business workflows, that question is messier than it looks. A contractor may have a text message that approves extra work, a half-updated job file, a missing signature, and an invoice that still reflects the original scope. A creative agency may have a Slack thread where the client approved more work, a project tracker that still shows the old budget, and a team member who remembers the context but is not the formal budget owner.</p>
+<p>If an AI system prepares the next action in either workflow, the approval button is not enough. The system needs to represent the evidence behind the action.</p>
+<p>That is the primitive: approval evidence.</p>
+<p>By approval evidence, I mean the state packet attached to a human approval point. It captures what the system saw, what it inferred, what action is being released, which business object will change, what evidence supports the action, what is missing, and what record survives after approval.</p>
+<p>Old software often treated approval as a status field. Pending. Approved. Rejected. Maybe a timestamp and a user id. That works when the surrounding process is stable and everyone knows where the evidence lives. It breaks down when the evidence is scattered across texts, emails, browser pages, PDFs, chat threads, screenshots, and human memory.</p>
+<p>AI makes the gap more important because the system can now assemble and act on information that no single traditional screen owns. It might fill a supplier form, draft a customer response, prepare an invoice line, update a record, or submit a request in another system. When the action crosses that boundary, the product surface cannot just be a confirmation modal. It has to show the state being approved.</p>
+<p>The difference between approval UI and approval evidence is subtle but important.</p>
+<p>Approval UI is the button, checkbox, modal, or dashboard card.</p>
+<p>Approval evidence is the reason the human can trust the button.</p>
+<p>It answers questions like:</p>
+<p>What did the system observe before pausing?</p>
+<p>What will change if this is approved?</p>
+<p>Which source artifacts support the proposed action?</p>
+<p>What confidence or missing-data warning should change the review?</p>
+<p>Who approved the action, and what did they see at the time?</p>
+<p>What record remains if the customer, vendor, or manager disputes the outcome later?</p>
+<p>This is where many &quot;human review&quot; designs are weaker than they look. They keep the human nominally in charge, but they make the human rebuild context from scratch. The operator has to open the invoice, search the thread, check the project tracker, inspect the draft, and remember the policy. At that point, the AI has not made approval safer. It has just moved the bottleneck to a prettier screen.</p>
+<p>A stronger system treats the approval checkpoint as a state transition. Before approval, the system is proposing. At approval, the human releases a specific action against a specific evidence packet. After approval, the system preserves enough of that packet for audit, correction, feedback, and future automation.</p>
+<p>That last part matters because approval evidence compounds. When humans correct approvals, reject actions, or flag missing evidence, the system learns what the workflow actually requires. Over time, the product can distinguish low-risk actions from ones that need more proof. It can learn that a text approval is enough to schedule work but not enough to bill. It can learn that a Slack message from the requester is different from approval by the budget owner. It can learn which missing fields should block submission and which can be handled later.</p>
+<p>For SMBs, this is a large opportunity because their workflows are full of informal approval evidence. The business runs on texts, calls, emails, screenshots, shared spreadsheets, and memory. The first valuable AI layer is often not full autonomy. It is an operating layer that can gather those fragments, pause at the right moment, and let a human approve with the evidence in view.</p>
+<p>I think this will become one of the durable boundaries between toy agents and systems of action. A toy agent asks for permission. A system of action knows what permission means in the workflow.</p>
+<p>The useful reframe is that human approval is not a safety feature unless the system models the evidence behind the approval. The primitive is not the loop. The primitive is the reviewable state that makes the loop real.</p>
+    </article>
+  </main>
+</body>
+</html>
