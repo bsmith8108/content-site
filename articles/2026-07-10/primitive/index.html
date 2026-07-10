@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH9P7FYYR1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FH9P7FYYR1');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Workflow Discovery State Comes Before Agents</title>
+  <meta name="description" content="One pattern I keep seeing in operational AI work is that the use case is rarely where the label says it is. &quot;Renewal follow-up&quot; sounds like messaging. &quot;Warranty follow-up&quot; sounds like...">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html">Operating Notes</a>
+    <nav aria-label="Primary">
+      <a href="../../../index.html">Articles</a>
+    </nav>
+  </header>
+  <main>
+    <article class="article-page">
+      <p class="meta">2026-07-10 · Primitive</p>
+<h1>Workflow Discovery State Comes Before Agents</h1>
+<p>One pattern I keep seeing in operational AI work is that the use case is rarely where the label says it is.</p>
+<p>&quot;Renewal follow-up&quot; sounds like messaging. &quot;Warranty follow-up&quot; sounds like customer service. &quot;Admissions&quot; sounds like forms. &quot;Payroll&quot; sounds like accounting. But when you sit inside the actual workflow, the label breaks apart. The work crosses systems, messages, records, calendars, attachments, exceptions, and the memory of the person who knows how the business really runs.</p>
+<p>That is why I think workflow discovery state is going to matter more than most teams expect.</p>
+<p>By workflow discovery state, I mean a structured map of the operating reality before automation starts: who carries the judgment, which systems hold partial context, which artifacts matter, what repeats, what fails, what needs approval, and what would count as time back.</p>
+<p>Consider a tutoring center with a renewal workflow. The old software frame says the system needs student records, templates, and maybe a CRM sequence. The AI frame is different. The product needs to know whether the student&#x27;s plan changed, whether tutor notes contradict the old template, whether the parent asked for a new schedule, whether a sibling is now involved, and when the center should stop and let a human review the message.</p>
+<p>That is not just a better email tool. It is a state model for a human judgment loop.</p>
+<p>The same pattern shows up in home services. A warranty follow-up may depend on paid invoice status, job completion photos, technician notes, customer tone, missing evidence, and whether the issue should become a callback, a chargeable repair, or an escalation. A chatbot sitting on top of the inbox can summarize the complaint. A system of action needs to know which evidence is missing and what the business is allowed to do next.</p>
+<p>This is where many AI products get the order wrong. They start by turning task labels into agents. The agent drafts, routes, summarizes, or updates. But if the workflow map is wrong, the agent is operating on a decorative version of the business. It may complete the visible task while preserving the hidden bottleneck.</p>
+<p>The old SaaS implementation model could often survive this. A team configured fields, trained users, and left the undocumented judgment with the humans. The software stored the records around the work. People remained the workflow engine.</p>
+<p>AI changes that boundary. The system is no longer just displaying fields. It is reading context, proposing actions, drafting messages, escalating exceptions, and sometimes updating downstream state. Once software participates in the judgment loop, the undocumented parts of the workflow have to become product inputs.</p>
+<p>That creates a primitive: discovery state as durable operating context.</p>
+<p>It should answer questions like:</p>
+<p>Which person is the real router for this workflow? Which records are trusted, and which ones are checked against memory? Which messages or documents carry authority? Which exceptions require review? What outcome does the operator actually want improved?</p>
+<p>Those answers are not just notes from sales discovery. They are the seed of the system. They shape permissions, evaluation cases, review queues, escalation paths, integrations, and the first useful ROI measure.</p>
+<p>SMBs are the natural place to see this because their work is both messy and close to the operator. The person who knows the process may also be doing the work, managing the relationship, approving the exception, and remembering why the software record is incomplete. That looks inefficient from the outside. From inside the business, it is often the operating system.</p>
+<p>The opportunity is not to pretend that operating system does not exist. The opportunity is to capture enough of it that software can participate without breaking trust.</p>
+<p>I used to think the hard part of AI implementation was choosing the right workflow to automate. I now think the harder and more valuable part is making the workflow legible before the first agent runs.</p>
+<p>The reframe is that discovery is not a pre-sales chore.</p>
+<p>For AI systems of action, discovery is part of the product architecture.</p>
+    </article>
+  </main>
+</body>
+</html>
