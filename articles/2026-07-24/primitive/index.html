@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH9P7FYYR1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FH9P7FYYR1');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Intake Reconciliation Is An AI Operations Primitive</title>
+  <meta name="description" content="The pattern I keep seeing is that AI does not only make work easier to do. It makes messy inputs easier to ingest. That sounds like progress, and often it is. A model can read a CSV,...">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html">Operating Notes</a>
+    <nav aria-label="Primary">
+      <a href="../../../index.html">Articles</a>
+    </nav>
+  </header>
+  <main>
+    <article class="article-page">
+      <p class="meta">2026-07-24 · Primitive</p>
+<h1>Intake Reconciliation Is An AI Operations Primitive</h1>
+<p>The pattern I keep seeing is that AI does not only make work easier to do. It makes messy inputs easier to ingest.</p>
+<p>That sounds like progress, and often it is. A model can read a CSV, parse a PDF, extract fields from email, normalize names, summarize notes, and propose matches much faster than a person working row by row.</p>
+<p>The danger is that speed changes the failure mode. When messy external data moves slowly, people often notice its uncertainty because they are forced to touch it. When AI makes ingestion fast, weak data can become operational state before anyone has decided whether it is complete, current, mapped, duplicated, or safe to use.</p>
+<p>This is why I think &quot;import&quot; is the wrong frame for many AI workflows. The better primitive is intake reconciliation.</p>
+<p>Take a medical billing service that receives a claims CSV from a small practice. The file has payer names that do not match the billing platform, missing provider identifiers, and a correction that arrives by email after the upload. The old software frame treats this as a file import problem: parse rows, validate required fields, and write records.</p>
+<p>The real workflow is messier. Payer aliases need to map to known entities. Missing IDs need to hold rows out of the billing queue. The correction email needs to attach to the intake batch. The system needs to show which records are new, which ones matched existing data, which ones are duplicates, and which ones require human judgment before promotion.</p>
+<p>An accounting firm has a parallel version of the same problem. Tax documents arrive through a portal, partner email, SMS photo, document folder, and stale tracker. The useful AI system is not just a document reader. It is a reconciliation layer that turns scattered evidence into a readiness state: received, usable, missing, stale, unsigned, conflicting, or ready for review.</p>
+<p>That is the primitive: a governed staging layer between outside information and operational truth.</p>
+<p>It needs several pieces that old CRUD software often treats as incidental.</p>
+<p>First, provenance. The system should remember where each field came from: uploaded file, email correction, portal document, manual override, prior account, or human note. Provenance is what lets the business explain why it believed a value at the time.</p>
+<p>Second, matching and deduplication. The system has to decide whether &quot;ABC Dental,&quot; &quot;A.B.C. Dental LLC,&quot; and an older customer record are one entity, related entities, or separate records. AI can propose that answer, but the workflow needs a state for uncertain matches.</p>
+<p>Third, validation against business rules. A row can be syntactically valid and still unusable. A document can be present and still stale. A contact can be real and still missing the role that determines the next action.</p>
+<p>Fourth, promotion. The staged record should not become operational state merely because it was parsed. Something has to decide what gets created, updated, skipped, held, or escalated. Sometimes that decision can be automatic. Sometimes it needs a human. The important part is that the boundary is explicit.</p>
+<p>Fifth, correction history. Intake data often changes after the first upload. A customer sends the missing ID. A manager corrects a payer name. A partner forwards a document from the wrong thread. The system should treat these as updates to the intake batch, not as random edits scattered across downstream records.</p>
+<p>This is a small-sounding layer with large implications. It turns AI from a parser into a participant in the operating system. The software is no longer just answering &quot;what did the file say?&quot; It is helping answer &quot;what is the business now allowed to believe, and what work can safely start from that belief?&quot;</p>
+<p>SMBs are a natural market for this because their intake pain is everywhere. They run on shared inboxes, customer portals, spreadsheets, text messages, file folders, and employee memory. The mess is not a sign that the business is unsophisticated. It is what happens when real customers use whatever channel is convenient and employees keep work moving with the tools they have.</p>
+<p>The best AI products for these businesses will not simply add smarter upload buttons. They will own the boundary between external mess and internal state.</p>
+<p>That boundary is where trust is built. It is also where a lot of ROI lives, because every bad import creates downstream rework, duplicate records, missed billing, delayed service, compliance risk, or customer confusion.</p>
+<p>The reframe is simple: intake is not the front door to the database. It is a judgment layer.</p>
+<p>AI should make that judgment layer faster, more consistent, and easier to supervise. It should not make bad data operational at machine speed.</p>
+    </article>
+  </main>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH9P7FYYR1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FH9P7FYYR1');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Make AI Changes Easy To Inspect Before You Make Them Easy To Undo</title>
+  <meta name="description" content="A customer calls a machine shop and says the replacement parts were made to the wrong revision. Someone checks the drawing, looks at the purchase order, opens the complaint thread, and...">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html">Operating Notes</a>
+    <nav aria-label="Primary">
+      <a href="../../../index.html">Articles</a>
+    </nav>
+  </header>
+  <main>
+    <article class="article-page">
+      <p class="meta">2026-07-23 · Practice</p>
+<h1>Make AI Changes Easy To Inspect Before You Make Them Easy To Undo</h1>
+<p>A customer calls a machine shop and says the replacement parts were made to the wrong revision. Someone checks the drawing, looks at the purchase order, opens the complaint thread, and updates the job status so the next person knows whether this is a fit issue, a revision dispute, or a rework obligation.</p>
+<p>That sounds like a reasonable place to use AI. The system can read the complaint, find the attached photo, compare the part number to the order, summarize the likely issue, and suggest the next status.</p>
+<p>The risky part is not the suggestion. The risky part is the write.</p>
+<p>Once the system changes the job from &quot;shipped&quot; to &quot;rework pending,&quot; other work starts to move around that state. Scheduling may reserve machine time. Purchasing may hold material. A customer service rep may send a new update. Accounting may delay an invoice. If the AI picked the wrong revision or matched the complaint to the wrong job, the business does not just need an audit log. It needs a clean way to recover without making the mess worse.</p>
+<p>This is where I think a lot of SMB AI adoption will get more practical. Operators do not need to begin with full autonomy. They need the confidence that a system can participate in everyday record updates without turning every mistake into a database cleanup project.</p>
+<p>The first step is simple: make every AI-assisted change inspectable.</p>
+<p>If an assistant updates a job, customer record, approval status, invoice note, or compliance checklist, the system should preserve who requested it, what record changed, what the old value was, what the new value is, what evidence supported the change, and whether any related records changed at the same time.</p>
+<p>That matters in less technical workflows too. An HR consultant may receive an email that seems to approve a new handbook. The AI can summarize the feedback, update the client checklist, and draft the next message. But &quot;client replied&quot; is not the same as &quot;handbook approved.&quot; Maybe the email approved the policy language but not the effective date. Maybe the sender was an office manager, not the decision-maker. Maybe a later message changed the answer.</p>
+<p>If the system updates the status too aggressively, undo should not mean silently rewinding the database to yesterday. The business needs a supervised reversal: change the status back, leave a record of why, preserve the mistaken update, and flag any downstream work that already depended on it.</p>
+<p>That is the practical trust model.</p>
+<p>Start by choosing a workflow where the writes are valuable but bounded. Status changes are often a good candidate. So are document checklist updates, customer follow-up stages, billing holds, missing-evidence flags, and task ownership changes. Avoid beginning with irreversible actions like sending money, deleting records, firing off customer commitments, or changing legal documents without review.</p>
+<p>Then define what the system is allowed to reverse.</p>
+<p>It may be safe to undo a job status if no one has touched the job since the AI updated it. It may be safe to remove a checklist completion if the client has not received the final deliverable. It may not be safe to roll back a billing note after a human has already edited the invoice, or to undo a customer-facing email after it has been sent.</p>
+<p>That conflict check is important because humans and AI will both be operating in the same workflow. A rollback that ignores later human work is not safety. It is another uncontrolled write.</p>
+<p>The goal is not to make the system afraid to act. The goal is to make action easier to supervise.</p>
+<p>For an operator, the useful question is not &quot;Can AI update our records?&quot;</p>
+<p>The better question is: &quot;If AI updates the wrong record, will we know exactly what changed, why it changed, what else moved because of it, and whether it is still safe to reverse?&quot;</p>
+<p>That is a much more useful adoption bar. It turns trust from a feeling into an operating procedure.</p>
+<p>AI becomes practical in SMB workflows when it can help with the messy middle: reading context, suggesting the next state, making routine updates, and leaving enough evidence for a person to inspect or reverse the result. The first win is not a magical undo button. It is a workflow where every AI change is visible, bounded, and recoverable in the ordinary language of the business.</p>
+    </article>
+  </main>
+</body>
+</html>

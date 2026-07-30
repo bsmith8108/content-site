@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH9P7FYYR1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FH9P7FYYR1');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Do Not Let AI Import The Mess Faster</title>
+  <meta name="description" content="A batch upload can feel like an obvious place to use AI. The file is structured enough to parse, repetitive enough to be boring, and expensive enough to clean by hand. But the first...">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html">Operating Notes</a>
+    <nav aria-label="Primary">
+      <a href="../../../index.html">Articles</a>
+    </nav>
+  </header>
+  <main>
+    <article class="article-page">
+      <p class="meta">2026-07-24 · Practice</p>
+<h1>Do Not Let AI Import The Mess Faster</h1>
+<p>A batch upload can feel like an obvious place to use AI. The file is structured enough to parse, repetitive enough to be boring, and expensive enough to clean by hand.</p>
+<p>But the first operational question is not whether AI can read the file. It is whether the business should trust the file enough to let it touch the system of record.</p>
+<p>That distinction matters in ordinary SMB work. A medical billing service gets a claims CSV from a small practice. The payer names do not match the billing platform, several rows are missing provider identifiers, and the practice manager emails a correction after the upload. If the team imports first and fixes later, billers spend the afternoon reversing bad rows, reworking rejected claims, and explaining why the cleanup took longer than the original task.</p>
+<p>An accounting firm sees the same pattern in a less structured form. A client&#x27;s W-2s are in the portal, 1099s are sitting in a partner&#x27;s inbox, a K-1 arrives as a texted photo, and last year&#x27;s organizer still says the file has not started. The work is not blocked because no one can read documents. It is blocked because no one has a single, trusted view of readiness.</p>
+<p>This is where I think a lot of practical AI adoption gets more interesting. The win is not &quot;automate import.&quot; The win is preflight.</p>
+<p>Preflight means the system creates a staging area before operational data is allowed to land. It can read the file, extract the fields, compare names to known aliases, detect duplicates, flag missing identifiers, attach source evidence, and show the operator what will happen if the import is approved.</p>
+<p>That last part is important. The human review step should not be a ceremonial &quot;looks good&quot; button. It should answer specific operating questions:</p>
+<p>Which rows are clean? Which rows matched an existing customer, payer, vendor, or account? Which rows need a mapping decision? Which rows are present but not usable? Which corrections arrived outside the file? What will be created, updated, skipped, or held?</p>
+<p>For the medical billing company, that might mean mapping payer aliases before claims hit the billing queue, holding rows without required provider IDs, and versioning corrections from the practice manager&#x27;s email. For the accounting firm, it might mean turning six channels into one readiness checklist, where a document can be present without being accepted as complete.</p>
+<p>This makes AI feel safer because it reduces the hidden cost of cleanup. Bad intake data does not usually fail cleanly. It leaks into downstream work: a duplicate customer, a wrong payer, a stale address, a missing document, a task assigned to the wrong owner. By the time someone notices, the business is not fixing a file anymore. It is unwinding work.</p>
+<p>The practical first step is to separate &quot;received&quot; from &quot;ready.&quot; Most businesses already know which fields, documents, approvals, or mappings are needed before work should move forward. They just enforce those rules inconsistently because the evidence lives across inboxes, spreadsheets, portals, and people&#x27;s heads.</p>
+<p>AI can help by making that readiness visible. It can gather the scattered evidence, propose matches, surface exceptions, and keep a human in the loop where judgment is required. That is a much better trust-building path than letting the system write directly into operations and hoping the audit trail catches mistakes later.</p>
+<p>The useful reframe is this: intake is not clerical work. It is the boundary where the business decides what it is allowed to believe.</p>
+<p>Automating that boundary is valuable. Skipping it is how AI turns a messy workflow into a faster mess.</p>
+    </article>
+  </main>
+</body>
+</html>

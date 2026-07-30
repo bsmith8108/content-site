@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH9P7FYYR1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FH9P7FYYR1');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Control Loop Is The Missing AI Planning Primitive</title>
+  <meta name="description" content="The pattern I keep seeing is that AI planning tools are too eager to become the source of truth. They summarize the work. They rank the tasks. They produce a daily plan. Sometimes that...">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html">Operating Notes</a>
+    <nav aria-label="Primary">
+      <a href="../../../index.html">Articles</a>
+    </nav>
+  </header>
+  <main>
+    <article class="article-page">
+      <p class="meta">2026-07-30 · Primitive</p>
+<h1>The Control Loop Is The Missing AI Planning Primitive</h1>
+<p>The pattern I keep seeing is that AI planning tools are too eager to become the source of truth.</p>
+<p>They summarize the work. They rank the tasks. They produce a daily plan. Sometimes that is useful. But if the system does not know the difference between the original plan, the actual state of the business, the current forecast, and a hypothetical scenario, it can make priorities sound intelligent while quietly hiding drift.</p>
+<p>That matters because business work rarely misses the plan in a clean way.</p>
+<p>A building materials supplier might pay the same vendor invoice twice because the invoice arrived through two channels and one copy had a handwritten delivery note. The duplicate is not obvious from one field. It depends on vendor, amount, date, purchase order, delivery evidence, and whether a leading zero changed the invoice number.</p>
+<p>An aerospace machining supplier might finish a first-article documentation fix and include engineering time on the final invoice. Quality approved the correction. The customer quality contact agreed by email. But the approval never became a billable change order, so finance now has cost without clean commercial authorization.</p>
+<p>In both cases, the issue is not that the business lacks a dashboard. The issue is that operating reality has drifted away from the model the business is using to make decisions.</p>
+<p>I think the missing primitive is control-loop state.</p>
+<p>By that I mean a structured layer that keeps five things distinct.</p>
+<p>First, the baseline. What did the business expect before the week, month, job, or quarter started?</p>
+<p>Second, actuals. What has really happened, backed by source evidence and reviewed where the stakes require it?</p>
+<p>Third, forecast. If the current pattern continues, what happens to cash, capacity, delivery, pipeline, margin, or customer commitments?</p>
+<p>Fourth, scenarios. What changes if the close rate drops, a customer delays approval, a supplier cost rises, a disputed charge is not recovered, or a bottleneck clears?</p>
+<p>Fifth, execution queues. Which specific class of work should move next: proactive outreach, late-stage follow-up, customer delivery, billing review, product work, hiring, collections, or operational cleanup?</p>
+<p>Most software keeps parts of this scattered across financial models, CRMs, accounting systems, spreadsheets, calendars, project boards, and inboxes. Traditional reporting pulls those pieces together after the fact. A generic AI assistant may summarize them on demand. Neither is enough for systems of action.</p>
+<p>Once AI starts recommending what should happen next, it needs to preserve the control loop underneath the recommendation.</p>
+<p>The baseline prevents moving the goalposts. If the plan expected one result and reality produced another, the system should not erase the miss by rewriting the plan around the new reality.</p>
+<p>Actuals prevent planning from becoming fiction. If a customer approval happened in a text thread, an invoice is missing support, or a delivery was completed but not accepted, the system needs evidence before it treats the state as true.</p>
+<p>Forecast turns operational variance into consequence. A missed approval is not only a task. It may affect revenue recognition, cash timing, capacity, customer trust, or the next sales target.</p>
+<p>Scenarios preserve judgment. The operator still decides whether to push harder on outreach, renegotiate scope, pause spending, escalate a customer issue, or accept the variance. AI can calculate and surface options, but the choice remains a business judgment.</p>
+<p>Execution queues make the recommendation actionable. &quot;Focus on growth&quot; is too vague. &quot;You are two qualified opportunities behind the baseline, one invoice is blocked by missing approval evidence, and today&#x27;s highest-leverage work is late-stage follow-up before new research&quot; is much closer to how an operating system should behave.</p>
+<p>This is why I think AI planning is a more interesting product category than task management with better prose.</p>
+<p>The durable layer is not the generated plan. It is the machinery that reconciles commitments, actuals, forecasts, permissions, evidence, and next actions. The plan is just the visible surface of that machinery.</p>
+<p>SMBs are a natural place for this because their control loops are often informal. The owner has the financial model. The bookkeeper has actuals. The salesperson knows which customer is real. The project lead knows which job is blocked. The inbox has the approval. The calendar has the capacity constraint. The business runs because people keep reconciling those signals manually.</p>
+<p>AI can make that reconciliation cheaper, faster, and easier to supervise, but only if the software treats planning as a state problem instead of a writing problem.</p>
+<p>The useful reframe is not &quot;Can AI plan my day?&quot;</p>
+<p>It is &quot;Can the system show where reality diverged from the operating model, forecast the consequence, and route the next reviewed action to the right queue?&quot;</p>
+    </article>
+  </main>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH9P7FYYR1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FH9P7FYYR1');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Business Canon Is An AI Operations Primitive</title>
+  <meta name="description" content="The more AI systems touch recurring business workflows, the less I think &quot;knowledge base&quot; is the right frame. Most businesses do not only need a place to store documents. They need a way...">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html">Operating Notes</a>
+    <nav aria-label="Primary">
+      <a href="../../../index.html">Articles</a>
+    </nav>
+  </header>
+  <main>
+    <article class="article-page">
+      <p class="meta">2026-07-13 · Primitive</p>
+<h1>Business Canon Is An AI Operations Primitive</h1>
+<p>The more AI systems touch recurring business workflows, the less I think &quot;knowledge base&quot; is the right frame.</p>
+<p>Most businesses do not only need a place to store documents. They need a way to tell software which facts are canonical, which ones are provisional, which evidence is private, which decisions have changed, and which claims require a human before action.</p>
+<p>That is closer to business canon than documentation.</p>
+<p>A veterinary clinic exposes the problem quickly. A post-visit follow-up may depend on the procedure notes, the final medication record, the invoice, discharge instructions, and a phone call after the owner asked a question. If an AI system drafts from an earlier instruction because it was the easiest artifact to find, it can produce a fluent message that is operationally wrong.</p>
+<p>A food co-packer has the same problem in a different shape. A retailer complaint arrives with an incomplete store reference and a blurry photo. Customer success needs a response, but QA records live in scanned PDFs, shipment records suggest only a likely lot, and the customer-facing answer has to distinguish confirmed trace evidence from a best guess.</p>
+<p>The old software frame treats these as retrieval problems. Find the relevant document. Summarize the likely answer. Draft the response.</p>
+<p>That is not enough once the system can influence action.</p>
+<p>The missing primitive is governed source state. The system needs to know not just what information exists, but what role that information is allowed to play in the workflow.</p>
+<p>Some records are authoritative. Some are drafts. Some are evidence but not customer-facing language. Some are prior versions that should be preserved for audit but ignored for future action. Some are examples that help interpret the work but should never override the current policy. Some are claims that were true last month and need rechecking before reuse.</p>
+<p>This distinction matters because AI is unusually good at making weak source material look coherent. A human can often see that an old PDF, a forwarded email, and a half-updated spreadsheet are a messy bundle. A model may turn that bundle into a confident answer unless the product carries the source hierarchy through the workflow.</p>
+<p>I think this is one reason many AI products will need an operating layer underneath chat and search.</p>
+<p>That layer should answer questions like:</p>
+<p>Which source is allowed to define the current customer policy?</p>
+<p>Which record controls the next follow-up?</p>
+<p>Which evidence can be shown to the customer, and which should stay internal?</p>
+<p>Which previous decision is still valid?</p>
+<p>Which answer is blocked because the source only supports uncertainty?</p>
+<p>Which human owns the exception when two records disagree?</p>
+<p>Those questions sound like governance, but they are also product mechanics. They determine whether an AI system can safely draft, route, approve, suppress, escalate, or update work.</p>
+<p>Business canon is not static. That is the important difference from a traditional manual or wiki. The point is not to freeze the company in documentation. The point is to preserve continuity while the business changes.</p>
+<p>A policy changes. A customer approves an exception. A supplier substitution is safe to use but not yet approved to bill. A complaint response starts as a hypothesis and later becomes a confirmed lot trace. A follow-up template is acceptable for one service line but dangerous for another. The operating layer needs to record those changes as state, not let them disappear into the newest prompt or the last generated draft.</p>
+<p>For SMBs, this may be especially valuable because so much operating knowledge is informal. The decisive truth often lives in someone&#x27;s memory, a text thread, a spreadsheet note, a scanned document, or a customer-service habit that never made it into the system of record.</p>
+<p>The AI opportunity is not just to retrieve that context. It is to convert the important parts into governed operating knowledge.</p>
+<p>That creates a different kind of system of action. The product is not merely answering from documents. It is maintaining a source map for the business: canonical facts, private evidence, version history, approval status, uncertainty, and escalation paths.</p>
+<p>Once that layer exists, AI can participate more safely. It can draft from the right source, explain which evidence was used, flag stale or conflicting records, and preserve a review trail when a human changes the answer.</p>
+<p>Without that layer, every agent is tempted to treat the latest artifact as truth.</p>
+<p>The reframe I keep coming back to is this: in operational AI, memory is not enough. The system needs canon.</p>
+    </article>
+  </main>
+</body>
+</html>

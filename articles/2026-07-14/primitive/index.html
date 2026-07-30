@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH9P7FYYR1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FH9P7FYYR1');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Source Fidelity Is An AI Operations Primitive</title>
+  <meta name="description" content="The pattern I keep seeing in AI-assisted operations is that the system often reviews a projection of the work, not the work itself. That distinction sounds small until the projection...">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html">Operating Notes</a>
+    <nav aria-label="Primary">
+      <a href="../../../index.html">Articles</a>
+    </nav>
+  </header>
+  <main>
+    <article class="article-page">
+      <p class="meta">2026-07-14 · Primitive</p>
+<h1>Source Fidelity Is An AI Operations Primitive</h1>
+<p>The pattern I keep seeing in AI-assisted operations is that the system often reviews a projection of the work, not the work itself.</p>
+<p>That distinction sounds small until the projection drops the one detail that changes the answer. A connector extracts text from a message but loses a link. An OCR step reads an invoice line but misses a handwritten approval. A CRM export preserves the note but not the attachment. A dashboard rolls several records into one status. A summary captures the gist but removes the caveat.</p>
+<p>Each layer may be useful. None of them is automatically equivalent to the source.</p>
+<p>This matters because AI systems are moving from drafting into review, scoring, routing, escalation, and action. Once a system starts saying &quot;this customer follow-up is incomplete&quot; or &quot;these two warranty cases are duplicates,&quot; it is no longer just helping someone read faster. It is shaping operational judgment.</p>
+<p>Consider a dental office that follows up after a treatment plan. The patient has not scheduled the crown yet. The reminder text may be sitting in one system, the insurance pre-authorization in another, and the printed estimate in a third. If an AI reviewer only sees the reminder text, it can judge tone, timing, and clarity. It cannot safely judge whether the office should ask the patient to schedule before the cost context is resolved.</p>
+<p>Now consider an electronics manufacturer handling warranty support through distributors. A distributor opens an RMA. The end customer emails support directly with a video and a partially obscured serial number. A prior repair note lives in an older spreadsheet. A normalized queue may show two cases that look like duplicates. The source reality is more complicated: the duplicate question depends on serial evidence, channel context, prior repair history, and what the customer actually submitted.</p>
+<p>The primitive here is source fidelity state.</p>
+<p>An AI operating system needs to know whether it is looking at the source record, the rendered user-facing view, extracted text, normalized fields, a summary, or an inferred conclusion. Those are different evidence layers. They should carry different permissions.</p>
+<p>Extracted text might be allowed to support search. Normalized fields might be allowed to support routing. Summaries might be allowed to support prioritization. But escalation, merge, billing, clinical, compliance, or customer-facing decisions often need a higher-fidelity view.</p>
+<p>The old software frame treats these layers mostly as implementation details. Data comes in, gets parsed, lands in fields, and becomes available to the product. If the field is populated, the interface can act as though the fact exists.</p>
+<p>AI makes that frame weaker.</p>
+<p>When software only displayed records, a missing detail was a UI problem or a data-quality problem. When AI reasons over those records, the missing detail becomes a judgment problem. The system can now produce a fluent explanation for an incorrect conclusion because the evidence layer underneath it was incomplete.</p>
+<p>That is why &quot;human in the loop&quot; is not enough. A person can only correct the system if the review surface exposes the evidence at the right fidelity. If the human sees the same lossy projection the model saw, the review step may simply ratify the wrong conclusion.</p>
+<p>Source fidelity state changes the architecture in a few practical ways.</p>
+<p>First, every derived representation should know where it came from. A summary should link back to the source record. A normalized duplicate match should expose the fields and artifacts that produced the match. A missing-context flag should say whether the absence came from the source, the extractor, or the current view.</p>
+<p>Second, actions should declare their evidence requirement. Searching a queue can tolerate lower fidelity. Sending a customer message requires the rendered customer-facing state. Merging warranty cases requires source artifacts. Escalating a billing dispute may require attachments, approvals, and the current balance.</p>
+<p>Third, review surfaces should show representation boundaries. The user should be able to tell when they are reading a summary, an extraction, a normalized field, or the source itself. The boundary should not be buried in logs. It is part of the operating model.</p>
+<p>This is especially important for SMBs because their workflows are full of semi-structured evidence. A lot of the business truth lives in attachments, forwarded emails, photos, portal notes, spreadsheets, text threads, signed PDFs, and the memory of the person who handled the exception last time. That is exactly where AI can help. It is also exactly where lossy representations can become dangerous if they are treated as complete.</p>
+<p>The product opportunity is not to force every operator back into manual source inspection. That would defeat the point. The opportunity is to build systems that move fluidly across evidence layers and know when fidelity matters.</p>
+<p>A good AI system should be able to say: I can summarize this from extracted text. I can route it from normalized fields. I can suggest a likely duplicate from partial evidence. But before anyone merges the cases, bills the customer, changes the message, or escalates the exception, here is the source view that supports the decision.</p>
+<p>That is a different trust model from &quot;the AI reviewed it.&quot;</p>
+<p>It is closer to operational evidence management. The system does not just produce an answer. It preserves the chain between answer, representation, source, and permitted action.</p>
+<p>I think this will become one of the quiet but important primitives in AI systems of action. The winners will not only have better models or better prompts. They will have better boundaries around evidence: what was seen, what was lost, what was inferred, and what can safely happen next.</p>
+<p>The reframe is simple: do not ask whether the AI reviewed the record.</p>
+<p>Ask whether it reviewed a version of the record faithful enough for the decision.</p>
+    </article>
+  </main>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH9P7FYYR1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FH9P7FYYR1');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reversal State Is An AI Operations Primitive</title>
+  <meta name="description" content="The pattern I keep seeing in operational AI work is that the first hard question is not whether the system can change a record. It is what happens after it changes the wrong one. A...">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html">Operating Notes</a>
+    <nav aria-label="Primary">
+      <a href="../../../index.html">Articles</a>
+    </nav>
+  </header>
+  <main>
+    <article class="article-page">
+      <p class="meta">2026-07-23 · Primitive</p>
+<h1>Reversal State Is An AI Operations Primitive</h1>
+<p>The pattern I keep seeing in operational AI work is that the first hard question is not whether the system can change a record. It is what happens after it changes the wrong one.</p>
+<p>A machine shop receives a complaint about parts made to the wrong revision. The system reads the email, matches the customer to a job, finds the likely drawing, and updates the status to rework pending. An HR consultant receives comments on a handbook and the system marks the client approval step complete. In both cases, the AI did something that looks small: it changed state.</p>
+<p>But operational state is not text in a document. Other work starts to depend on it.</p>
+<p>The machine shop may reserve capacity, delay an invoice, notify purchasing, or send a customer update. The HR consultant may schedule rollout tasks, draft employee notices, or close the compliance checklist. If the AI acted on the wrong evidence, the product needs more than a log that says a change happened. It needs a model for reversal.</p>
+<p>This is where the instinct to use Git as a metaphor starts to break down. Git is excellent for source code because the artifact, the change, and the review path are all organized around files. Business operations are different. Current state lives in relational records. Writes may fan out across several entities. Humans may update the same record afterward. Some actions leave the database entirely, such as sending an email, provisioning an account, submitting an order, or notifying a customer.</p>
+<p>The software primitive is not Git for the database.</p>
+<p>The primitive is reversal state.</p>
+<p>At minimum, an AI system of action needs an append-only mutation journal. Each write should record the actor, request, entity, before state, after state, row version, evidence pointer, and idempotency key. Related writes should be grouped into a change set so the system can answer a practical question: what did this agent run actually change?</p>
+<p>That sounds like audit logging, but the purpose is different.</p>
+<p>An audit log helps someone inspect the past. Reversal state helps the system decide what recovery actions are still allowed in the present.</p>
+<p>If the agent changed a customer follow-up status and no one else has touched that record, the system may be able to apply a compensating write that returns the status to its prior value. If the agent changed three related records in one run, the system may need to reverse them in the opposite order. If a human edited one of those records later, automatic rollback should stop and escalate because the prior state is no longer clearly safe.</p>
+<p>That stop condition is the part that matters.</p>
+<p>A lot of AI product language treats recovery as if every action can simply be undone. Real operating systems do not work that way. Some actions are reversible. Some require compensation. Some are irreversible. Some are technically reversible but operationally unsafe because another person has already made a decision on top of the new state.</p>
+<p>This is why row versions, change sets, idempotency keys, and conflict checks are not backend trivia. They are the operating layer that lets AI participate in mutable business workflows without pretending mistakes are impossible.</p>
+<p>The old software frame asks whether the user has permission to edit the record. That is necessary, but it is incomplete for AI-assisted work. The system also needs to know whether the write was part of a larger operation, whether it has already been applied, what evidence justified it, what downstream work may depend on it, and whether a proposed reversal would overwrite newer human judgment.</p>
+<p>SMBs are a useful place to see this clearly because their workflows are often both messy and recoverable. A wrong status update, missed approval, duplicate invoice flag, or incorrect follow-up stage can create real cost, but the business usually has enough human context to review the correction if the system exposes the right evidence.</p>
+<p>That points toward a different product expectation.</p>
+<p>The winning systems of action will not only draft, classify, and update. They will maintain the state needed to repair their own participation. They will know which changes belong together. They will make rollback a supervised workflow. They will treat external effects as compensation problems, not database rewinds. They will stop when a later human decision makes automatic reversal unsafe.</p>
+<p>I think this is one of the less glamorous primitives that separates useful AI operations from impressive demos.</p>
+<p>A demo can show an agent updating the CRM. A real operating system has to answer the next question: if that update was wrong, can the business see what happened, understand what else moved, and recover without losing the judgment that came after it?</p>
+<p>The reframe is simple. Do not ask only whether AI is allowed to write.</p>
+<p>Ask whether the system knows how to recover from the write.</p>
+    </article>
+  </main>
+</body>
+</html>

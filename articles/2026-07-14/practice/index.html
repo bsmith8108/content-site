@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH9P7FYYR1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FH9P7FYYR1');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Do Not Review From The Wrong Version Of The Work</title>
+  <meta name="description" content="A customer follow-up can look careless in the review queue even when the employee did the right thing. That sounds like an AI accuracy problem, but often it is a source problem. The...">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html">Operating Notes</a>
+    <nav aria-label="Primary">
+      <a href="../../../index.html">Articles</a>
+    </nav>
+  </header>
+  <main>
+    <article class="article-page">
+      <p class="meta">2026-07-14 · Practice</p>
+<h1>Do Not Review From The Wrong Version Of The Work</h1>
+<p>A customer follow-up can look careless in the review queue even when the employee did the right thing.</p>
+<p>That sounds like an AI accuracy problem, but often it is a source problem. The system is not reviewing the work itself. It is reviewing an extracted version of the work, a copied field, a summarized note, or a normalized record that was created for convenience. Most of the time that view is useful. Sometimes it drops exactly the detail that changes the decision.</p>
+<p>Think about a dental office following up on a treatment plan. The patient leaves without scheduling a crown. The treatment coordinator has a printed estimate, the insurance pre-authorization is still pending, and the practice management system has one version of the plan while the reminder system has another. If AI reviews only the reminder text, it might flag the message as too vague or push the office to send a stronger scheduling prompt. But the real issue is not tone. The real issue is that cost context is unresolved, and the patient will not trust a &quot;schedule now&quot; message if the insurance estimate is still missing.</p>
+<p>The same pattern shows up in warranty work. An industrial electronics manufacturer might have a distributor open an RMA while the end customer emails support directly with a video, a partial serial number, and a prior repair note sitting in a stale spreadsheet. A simplified review queue may show two separate cases and tell the team to clean up duplicate follow-up. That may be directionally right, but the actual next step depends on the source evidence: the video, the serial number, the distributor record, the stale service note, and whether the two cases are truly the same failure.</p>
+<p>This is where many AI review workflows need more humility. The first useful question is not &quot;What did the model think of this message?&quot; It is &quot;Which version of the work did the model inspect?&quot;</p>
+<p>There are at least five different versions that can exist in a normal business workflow. There is the source record, like the original email, portal entry, invoice, video, estimate, or signed approval. There is the rendered view a human sees in the system. There is extracted text, which may remove formatting, links, tables, attachments, or hidden context. There are normalized fields, which are useful for filtering and routing. Then there is the AI summary, which is another step removed from the source.</p>
+<p>Those layers are not bad. You need them. A business cannot run every review process by forcing people to open raw files and inspect everything manually. Extraction makes work searchable. Normalization makes queues manageable. Summaries help people move faster.</p>
+<p>The problem comes when the system forgets what each layer is allowed to prove.</p>
+<p>An extracted reminder can tell you that a follow-up exists. It may not prove that the follow-up included the linked estimate, the attachment, or the final cost caveat. A normalized warranty record can tell you that two cases share a customer. It may not prove that the distributor request and the end-customer complaint are duplicates. A summary can tell you the likely issue. It should not become the final evidence for a billing, care, or escalation decision unless the source supports it.</p>
+<p>For an operator, the practical design is simple: let AI use lower-fidelity views for triage, but require higher-fidelity evidence for judgment.</p>
+<p>That might mean the system can flag a treatment-plan follow-up as &quot;cost context missing,&quot; but the staff member sees the insurance status and estimate before sending anything. It might mean the warranty queue can suggest a duplicate RMA, but the reviewer gets the serial details, video, distributor notes, and prior service history before merging cases. It might mean the AI can score outbound communication, but any defect it reports must link back to the source view that proves the issue.</p>
+<p>This is not about distrusting AI. It is about making the workflow honest about its own evidence.</p>
+<p>The human baseline is not perfect here. People also miss attachments, misread stale spreadsheets, and act from partial views. AI can improve the process if it makes the source trail easier to inspect and the review rules more consistent. But if the system is reviewing a lossy representation and presenting the result as confident judgment, it will create a new kind of operational risk: false defects that look well analyzed.</p>
+<p>The first step is to label the views inside the workflow. Source record. Rendered customer view. Extracted text. Normalized fields. Summary. Then decide which actions each view can support.</p>
+<p>Use the summary to find the work. Use the normalized fields to route it. Use the extracted text to search it. Use the rendered or source record to judge it.</p>
+<p>That distinction is small, but it changes the trust model. AI-assisted review becomes less about asking the model to be right from whatever data happens to be convenient, and more about giving the model and the human the right evidence for the decision in front of them.</p>
+<p>The useful reframe is not &quot;verify everything manually.&quot; That collapses back into the old process.</p>
+<p>The better question is: what is the lowest-friction view that is faithful enough for this decision?</p>
+    </article>
+  </main>
+</body>
+</html>

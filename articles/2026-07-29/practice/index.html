@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH9P7FYYR1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FH9P7FYYR1');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your CRM Should Not Forget The Work Before The Customer Exists</title>
+  <meta name="description" content="A lot of customer work starts before the system has a clean place to put it. A prospect fills out a form. Someone else sends the budget in a call. A third person shares brand assets...">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html">Operating Notes</a>
+    <nav aria-label="Primary">
+      <a href="../../../index.html">Articles</a>
+    </nav>
+  </header>
+  <main>
+    <article class="article-page">
+      <p class="meta">2026-07-29 · Practice</p>
+<h1>Your CRM Should Not Forget The Work Before The Customer Exists</h1>
+<p>A lot of customer work starts before the system has a clean place to put it.</p>
+<p>A prospect fills out a form. Someone else sends the budget in a call. A third person shares brand assets through a link that expires. The sales note says &quot;good fit,&quot; but the proposal team does not know whether the budget is real, whether the assets are accessible, or which stakeholder actually owns the decision.</p>
+<p>That is not just a CRM cleanup problem. It is the beginning of the operating workflow.</p>
+<p>The same pattern shows up after the sale. A small sign manufacturer finishes an exterior installation. The crew marks the job complete by text, the permit photo is still on someone&#x27;s phone, the customer asks for a touch-up, and accounting cannot issue the final invoice because completion evidence is scattered. The customer is real. The job is real. The revenue is almost real. But the system does not know which lifecycle state matters next.</p>
+<p>This is where many practical AI efforts get pointed at the wrong layer. The business asks for better notes, better summaries, or better follow-up drafts. Those can help, but the real issue is that the customer relationship is moving through several lifecycles at once.</p>
+<p>There is the sales lifecycle: lead, discovery, proposal, decision, closed won or lost.</p>
+<p>There is the onboarding lifecycle: what was promised, who owns the setup, what information is still missing, and when the customer is ready to operate.</p>
+<p>There is the delivery lifecycle: work scheduled, work started, work complete, exception open, evidence pending, customer accepted.</p>
+<p>There is the billing lifecycle: approved to bill, missing support, disputed, paid, renewed, expanded.</p>
+<p>Old software often tries to compress that into one account stage because the account is the easiest object to model. But operators know the account is not the work. A customer can be &quot;active&quot; while a proposal is still being revised for a second location. A job can be &quot;complete&quot; while invoice evidence is missing. A renewal can be &quot;likely&quot; while recent support tickets suggest the opposite.</p>
+<p>AI makes this more important because it can act on partial state faster than a person can. It can draft the proposal from the call notes, send the onboarding checklist, remind the customer about the touch-up, or prepare the invoice note. If it only knows the account label, it will sound organized while missing the actual operating constraint.</p>
+<p>The practical design is to capture lifecycle state before asking AI to act.</p>
+<p>For the agency proposal, that means the system should not only summarize the sales call. It should separate the budget mentioned on the call, the stakeholder who supplied the brief, the assets that are still accessible, and the proposal readiness gaps. AI can help turn scattered context into a checklist, but a human should see what is missing before the proposal goes out.</p>
+<p>For the sign installer, the system should not only write a friendly completion follow-up. It should know whether the photo checklist is complete, whether the touch-up task is assigned, whether the customer accepted the work, and whether accounting has enough evidence to release the final invoice.</p>
+<p>That is how AI starts to feel safe to an operator. It is not pretending to know the whole customer from one record. It is making the hidden state visible enough that people can supervise the next step.</p>
+<p>The ROI is also more concrete. Fewer proposals built around the wrong budget. Fewer invoices waiting on missing photos. Fewer renewals sent without service context. Fewer handoffs where the person downstream has to reconstruct what happened from memory.</p>
+<p>The first step is not to rebuild the whole CRM. Pick one customer workflow where work often stalls between teams. Write down the states that actually change what should happen next: ready for proposal, missing asset, approved to schedule, installed but not invoice-ready, renewal blocked by support issue.</p>
+<p>Then let AI help gather the evidence and suggest the next step, but keep the lifecycle state explicit.</p>
+<p>The useful question is not &quot;Does the CRM know this customer?&quot;</p>
+<p>It is &quot;Does the system know which part of the relationship is ready to move?&quot;</p>
+    </article>
+  </main>
+</body>
+</html>
