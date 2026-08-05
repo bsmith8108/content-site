@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH9P7FYYR1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FH9P7FYYR1');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Provisioning State Is The Pre-Action Primitive</title>
+  <meta name="description" content="The pattern I keep seeing is that AI systems are better at creating records than knowing whether those records are ready for action. That sounds like a small implementation detail until...">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html">Operating Notes</a>
+    <nav aria-label="Primary">
+      <a href="../../../index.html">Articles</a>
+    </nav>
+  </header>
+  <main>
+    <article class="article-page">
+      <p class="meta">2026-08-04 · Primitive</p>
+<h1>Provisioning State Is The Pre-Action Primitive</h1>
+<p>The pattern I keep seeing is that AI systems are better at creating records than knowing whether those records are ready for action.</p>
+<p>That sounds like a small implementation detail until the system touches real operations. A professional services firm creates a new client folder before the NDA is signed. A food co-packer approves an ingredient substitution for production before the customer approves the cost variance. In both cases, a record exists. Work can appear to be moving. The operational truth is more complicated.</p>
+<p>The old software frame treats setup as a transaction. Create the customer. Create the folder. Add the vendor. Generate the project. Store the integration ID. If the write succeeds, the system moves on.</p>
+<p>AI systems of action need a different frame because they do not just store the fact that setup happened. They draft the next message, route the next task, inspect the next artifact, recommend the next step, and sometimes update downstream systems. Once the system can act, &quot;created&quot; is too weak as a readiness signal.</p>
+<p>The primitive is provisioning state.</p>
+<p>Provisioning state is the operating record around setup. It tracks what was requested, which external systems were called, what identifiers came back, what permissions were granted, which credentials or access paths are active, which checks passed, what failed, what was retried, who approved the exception, and what downstream actions are now allowed.</p>
+<p>This matters because external setup is not a database transaction. The business can write to its own system and still wait on another system, another person, another approval, or another proof point. A customer can be entered before legal approval. A vendor can be active before insurance is current. A production change can be safe on the floor before it is approved commercially. A project can be created before the right billing, access, and review boundaries exist.</p>
+<p>When AI participates in that workflow, the product needs to preserve each of those states. Otherwise the model receives a simplified world where every green check means the same thing.</p>
+<p>Good provisioning state gives the system a safer action model:</p>
+<p>- requested means the setup work exists - pending means an external step is still incomplete - ready means the required checks passed - blocked means action must wait on a named condition - failed means retry or human intervention is needed - approved means a specific person accepted a specific exception - revoked means the old permission or identifier should stop being used</p>
+<p>The exact vocabulary will vary by workflow. The important move is to make setup durable, inspectable, and tied to allowed action.</p>
+<p>This is especially valuable in SMBs because the setup layer is usually informal. People know that the folder should not be shared until the agreement is signed. They know a substitution can run but cannot be billed until the customer says yes. They know a new customer is real, but payment terms are still unresolved. That knowledge lives in memory, email, texts, spreadsheets, and habit.</p>
+<p>AI can help capture and enforce that knowledge, but only if the product treats it as state. A chatbot can tell someone to check the NDA. A system of action can know that file sharing is blocked, draft the reminder, route the approval, and then unlock the next step when the evidence arrives.</p>
+<p>The builder implication is that onboarding, integration, and external setup should not be hidden implementation plumbing. They are part of the operating layer. Provisioning state determines whether the system can recommend, draft, route, update, bill, notify, or escalate.</p>
+<p>It also changes how reliability should be measured. The important question is not only whether the API call succeeded. The better question is whether the workflow reached a state where the next action is permitted and reviewable. That requires idempotency, retry history, evidence links, explicit blockers, and a fail-closed path when setup is incomplete.</p>
+<p>I think this becomes more important as AI products move from assistants into operational systems. The product that wins will not just create records across more tools. It will know when those records are ready enough to trust.</p>
+<p>The useful reframe is simple: before asking what action the AI can take, ask what provisioning state makes that action legitimate.</p>
+    </article>
+  </main>
+</body>
+</html>

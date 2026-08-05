@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH9P7FYYR1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FH9P7FYYR1');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Source-Health State Is An AI Operations Primitive</title>
+  <meta name="description" content="The next generation of AI operating systems will not be judged only by whether they can recommend the next action. They will be judged by whether the business can tell when the...">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html">Operating Notes</a>
+    <nav aria-label="Primary">
+      <a href="../../../index.html">Articles</a>
+    </nav>
+  </header>
+  <main>
+    <article class="article-page">
+      <p class="meta">2026-08-02 · Primitive</p>
+<h1>Source-Health State Is An AI Operations Primitive</h1>
+<p>The next generation of AI operating systems will not be judged only by whether they can recommend the next action.</p>
+<p>They will be judged by whether the business can tell when the recommendation is allowed to be trusted.</p>
+<p>That distinction matters because operational recommendations are usually assembled from sources with different authority. One system says a person is available. Another says whether the person is eligible. A document proves the eligibility. A spreadsheet may track expiration dates. An email may contain the latest exception. A manager may know which of those sources is stale.</p>
+<p>When software only displays records, humans can absorb that mess. They know the scheduling system is incomplete. They know the shared folder contains the real certificate. They know the vendor tracker was never updated after the certificate arrived by email.</p>
+<p>AI changes the boundary. Once the system starts drafting, prioritizing, assigning, blocking, routing, or updating, stale source state turns into operational motion.</p>
+<p>Consider a home care agency. A caregiver appears available for a shift, but the credential evidence is split across an HR folder, a spreadsheet, and the client care plan. The action is not safe just because one source says &quot;available.&quot; The system needs to know that availability, credential eligibility, document evidence, and care-plan requirements are different input states with different authority.</p>
+<p>The same pattern appears in vendor compliance. A restaurant vendor may be active in accounting and still be out of compliance because the certificate of insurance expired unnoticed. Purchasing history is a valid source for spend. It is not the authoritative source for vendor risk.</p>
+<p>This is why I think source-health state becomes a primitive for systems of action.</p>
+<p>By source-health state, I mean a structured layer that records whether each source needed for a recommendation is connected, fresh, authoritative, complete, conflicting, blocked, or awaiting human review.</p>
+<p>It is not the same as a citation. Citations answer, &quot;Where did this come from?&quot; Source health answers a more operational question: &quot;Is this input good enough for the action the system is about to recommend?&quot;</p>
+<p>A useful source-health object might include:</p>
+<p>- source system - authority for this workflow - freshness timestamp - completeness status - evidence link - conflict status - missing requirement - review owner - permitted action level</p>
+<p>That last field matters. The same input may be good enough to summarize, but not good enough to send. Good enough to draft, but not good enough to assign. Good enough to flag a risk, but not good enough to block fulfillment. AI systems need that gradient because business work is not binary.</p>
+<p>The old SaaS frame often treats integrations as plumbing. Connect the calendar, connect the CRM, connect the document folder, sync the fields. The AI operating-system frame is different. The integration is not valuable merely because data moved. It is valuable because the system knows what that data is allowed to mean.</p>
+<p>That is also where SMBs are a natural market. Their workflows are close enough to the operator that the true source hierarchy can be discovered, but informal enough that it rarely exists as clean software state. The business may know exactly which folder, spreadsheet, inbox, and manager judgment controls a workflow. It just has not had a reason to model that knowledge until software started making recommendations.</p>
+<p>AI gives that modeling work a payoff.</p>
+<p>Once source-health state exists, the system can produce recommendations that carry their own operating status: ready, stale, conflicting, incomplete, blocked, or needs review. It can explain why a schedule suggestion stopped. It can route the missing certificate to the right owner. It can avoid turning old CRM notes, stale spreadsheets, or partial documents into confident action.</p>
+<p>This is the builder lesson I keep coming back to: AI products should not only preserve context. They should preserve the quality and authority of context.</p>
+<p>The durable primitive is not &quot;more integrations.&quot;</p>
+<p>It is source-health state beneath the recommendation layer.</p>
+<p>Without it, AI systems will keep sounding decisive while quietly inheriting the weakest source in the workflow.</p>
+    </article>
+  </main>
+</body>
+</html>

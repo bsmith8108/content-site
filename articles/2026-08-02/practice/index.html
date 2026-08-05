@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH9P7FYYR1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FH9P7FYYR1');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Before AI Recommends The Next Step, Check The Source Health</title>
+  <meta name="description" content="A schedule can look open while the business is not actually allowed to use it. That is the kind of AI failure I think more operators are going to see as software starts recommending...">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html">Operating Notes</a>
+    <nav aria-label="Primary">
+      <a href="../../../index.html">Articles</a>
+    </nav>
+  </header>
+  <main>
+    <article class="article-page">
+      <p class="meta">2026-08-02 · Practice</p>
+<h1>Before AI Recommends The Next Step, Check The Source Health</h1>
+<p>A schedule can look open while the business is not actually allowed to use it.</p>
+<p>That is the kind of AI failure I think more operators are going to see as software starts recommending daily actions instead of just summarizing work. The recommendation sounds reasonable. The surface looks organized. The missing part is quieter: the system may not know whether the source behind the recommendation is fresh enough, complete enough, or authoritative enough to trust.</p>
+<p>Take a home care agency trying to assign a caregiver to a client with specific care requirements. The scheduling system shows availability. The HR folder has the caregiver&#x27;s CPR certificate. A spreadsheet has the TB test date. The client care plan has a credential requirement that is not visible in the scheduling tool.</p>
+<p>If AI only reads availability, it can make a fast recommendation that creates a real compliance problem. The issue is not that the model failed to reason. The issue is that the workflow treated one source as if it contained the whole truth.</p>
+<p>Or take a restaurant group onboarding and renewing vendors. A certificate of insurance arrives by email, gets saved under a vague filename, and never has its expiration date entered into the vendor tracker. Months later, AI may recommend keeping the vendor active because purchasing history and accounting status look normal. But the source that controls risk has gone stale.</p>
+<p>In both cases, the practical AI feature is not autonomy. It is source-health state.</p>
+<p>Before the system recommends an assignment, vendor renewal, customer follow-up, or daily priority, it should be able to show a simple operating view:</p>
+<p>- which systems were checked - which source is authoritative for this decision - when each source was last updated - what evidence is missing - which records conflict - whether the recommendation is actionable or blocked - who needs to review the exception</p>
+<p>That sounds less glamorous than an agent that just tells the team what to do. It is also much more useful.</p>
+<p>Most SMB operators do not distrust AI because they hate technology. They distrust it because they know how much of the business lives between systems. The scheduling app is not the credential file. The vendor tracker is not the email inbox. The checklist is not the signed document. The CRM note is not always the latest customer commitment.</p>
+<p>Humans already compensate for that mess. A manager knows to check the folder before making the assignment. A GM remembers that one vendor sent a certificate last year but never followed the renewal process. A finance person knows which spreadsheet is stale even when it still looks official.</p>
+<p>If AI is going to help, it has to capture that operating judgment instead of hiding it.</p>
+<p>The first implementation can be narrow. Pick one workflow where recommendations depend on several sources. For each source, decide what it is allowed to control. Availability may control whether a caregiver can be considered. Credentials control whether they can be assigned. A vendor invoice may show activity. The insurance certificate controls whether the vendor is compliant.</p>
+<p>Then make the AI recommendation carry its own trust label. &quot;Ready to schedule.&quot; &quot;Blocked by missing credential evidence.&quot; &quot;Needs manager review because source records conflict.&quot; &quot;Safe to draft, not safe to send.&quot; &quot;Vendor active in accounting, but compliance source is stale.&quot;</p>
+<p>That kind of state changes the conversation with the team. Instead of asking employees to trust a black-box recommendation, the system shows its work in operational terms they already understand. It gives people a smaller, better review job. It also makes ROI more concrete: fewer bad assignments, fewer missed renewals, fewer duplicate checks, fewer escalations caused by stale records, and less time spent asking which system is right.</p>
+<p>The useful reframe is this: do not start by asking whether AI can make the plan.</p>
+<p>Ask whether the plan can show the health of the sources behind it.</p>
+<p>If it cannot, the recommendation is not ready to be trusted. It is only a plausible guess dressed up as operations.</p>
+    </article>
+  </main>
+</body>
+</html>

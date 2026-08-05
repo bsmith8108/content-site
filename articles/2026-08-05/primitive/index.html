@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH9P7FYYR1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FH9P7FYYR1');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Context Boundary Is The Missing Layer In Company-Aware AI</title>
+  <meta name="description" content="A company-aware AI assistant sounds simple until it has to answer a question the business would actually act on. &quot;Can we renew this contract?&quot; is not a pure language problem. The answer...">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html">Operating Notes</a>
+    <nav aria-label="Primary">
+      <a href="../../../index.html">Articles</a>
+    </nav>
+  </header>
+  <main>
+    <article class="article-page">
+      <p class="meta">2026-08-05 · Primitive</p>
+<h1>Context Boundary Is The Missing Layer In Company-Aware AI</h1>
+<p>A company-aware AI assistant sounds simple until it has to answer a question the business would actually act on.</p>
+<p>&quot;Can we renew this contract?&quot; is not a pure language problem. The answer might require the signed agreement, the latest change request, a site supervisor&#x27;s note, a missing customer acknowledgment, and the status field in the system that owns the renewal. &quot;Can this supplier handle the next job?&quot; might require a supplier record, a certification packet, job requirements, an expiration date, and a quality manager&#x27;s decision.</p>
+<p>The pattern I keep seeing is that people talk about this as memory. The product needs to &quot;know the company.&quot; That phrase is useful as ambition, but it is dangerous as architecture.</p>
+<p>Company memory is not one object. Some information is the source of record. Some is retrieved evidence. Some is a stale note that may still explain a decision. Some is an inferred relationship. Some is a gap. Some is a contradiction. Some is a human override that should beat the model&#x27;s best guess. If the system collapses all of that into one context window, the answer may sound coherent while the operating boundary disappears.</p>
+<p>I think the missing primitive is context boundary.</p>
+<p>A context boundary is the layer that keeps different kinds of company knowledge in their proper role while AI answers questions or prepares work. It separates structured fields from supporting documents, durable records from derived summaries, observed evidence from inferred claims, and missing information from low-confidence guesses. It also carries provenance forward so a human can inspect the answer before it becomes action.</p>
+<p>That matters because company-aware AI is moving from search toward systems of action. A chatbot can get away with saying, &quot;I found this in a document.&quot; A system that drafts a renewal, releases an order, escalates a supplier issue, or recommends a customer follow-up needs a stronger contract. It needs to say what it knows, why that source has authority, what evidence supports the answer, what conflicts with it, and what should block the next step.</p>
+<p>The old software frame misses this because most business applications were built around screens and records. The CRM has the customer. The folder has the contract. The spreadsheet has the renewal checklist. The inbox has the latest exception. Humans bridge those systems through memory, judgment, and habit. They know which field is official, which email changed the process, which spreadsheet is stale, and which manager must approve the exception.</p>
+<p>AI breaks that informal bridge in both directions. It can gather context faster than a person, but it can also flatten authority. A retrieved paragraph, a generated summary, and an approved operating record can all look equally persuasive once they are inside the same answer. The more fluent the answer, the easier it is to miss that the system used context without preserving the boundary around it.</p>
+<p>The primitive needs a few explicit pieces.</p>
+<p>Source-of-record context says which system owns the field. Retrieved evidence provides excerpts or documents that support the answer. Gap state names what the system could not find. Conflict state shows when two sources disagree. Provenance ties each claim back to its origin. Review state assigns the human decision when the answer would change the business.</p>
+<p>This is not just architecture hygiene. It is the product surface underneath the UI.</p>
+<p>For SMBs, the opportunity is large because the context layer is usually informal. A cleaning company may run renewals through contracts, emails, site notes, and supervisor memory. A small manufacturer may run supplier approval through uploaded certificates, purchasing spreadsheets, job folders, and quality judgment. Those businesses do not need a general corporate brain first. They need a reliable way to answer operational questions with the right evidence and the right stops.</p>
+<p>That is why I do not think the winning company-aware products will be defined by chat history size. The durable advantage will come from modeling the business context well enough for action: authority, freshness, permissions, gaps, contradictions, and escalation.</p>
+<p>The user experience can still look like a simple question box. Underneath it, the system needs an operating layer that refuses to treat every piece of context the same way.</p>
+<p>The useful reframe is this: the goal is not to make AI remember the company.</p>
+<p>The goal is to make the company answerable.</p>
+    </article>
+  </main>
+</body>
+</html>
