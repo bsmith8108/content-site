@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH9P7FYYR1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FH9P7FYYR1');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Do Not Let AI Match Its Way Past The Stop Sign</title>
+  <meta name="description" content="A compliance packet can look complete while the business is still one bad match away from a shipment problem. A nutraceutical packager is trying to release a finished lot. The...">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html">Operating Notes</a>
+    <nav aria-label="Primary">
+      <a href="../../../index.html">Articles</a>
+    </nav>
+  </header>
+  <main>
+    <article class="article-page">
+      <p class="meta">2026-08-06 · Practice</p>
+<h1>Do Not Let AI Match Its Way Past The Stop Sign</h1>
+<p>A compliance packet can look complete while the business is still one bad match away from a shipment problem.</p>
+<p>A nutraceutical packager is trying to release a finished lot. The certificate of analysis has the right product name. The supplier looks familiar. The amount produced matches the order. But the lot number was handwritten on one scan, typed slightly differently in the production record, and missing from the customer release folder. Someone asks AI to match the certificate to the finished lot and move the job forward.</p>
+<p>This is where many AI workflows become risky in a quiet way. The system may have enough positive evidence to suggest a match. That does not mean it has enough evidence to treat the match as operational truth.</p>
+<p>The difference matters because small businesses rarely fail on the easy cases. They fail in the messy middle: a missing date, an expired document, a low-confidence extraction, a conflicting declaration, an old spreadsheet, or a status field that says the record still needs review. If the AI only adds up confirming signals, it can turn a plausible match into a confident mistake.</p>
+<p>A PCB assembly shop sees the same pattern with compliance declarations. Purchasing substitutes a component under schedule pressure. The supplier packet has a RoHS declaration, a REACH declaration, and an older spreadsheet that still lists the original part. A customer is waiting for proof before shipment. AI can help collect the packet, read the attachments, and identify likely matches across part numbers and suppliers. But if one declaration is obsolete or the substituted part does not share the same compliance evidence, the right answer is not &quot;matched.&quot; The right answer is &quot;possible match, blocked by conflict.&quot;</p>
+<p>That is the practical design shift.</p>
+<p>For operators, the goal should not be to make AI more aggressive at matching. The goal should be to make the matching workflow easier to supervise. A useful system should separate three things that often get collapsed together.</p>
+<p>First, there is the candidate match. These two records, documents, payments, lots, parts, customers, or cases appear to refer to the same thing.</p>
+<p>Second, there is supporting evidence. The amount matches. The account looks right. The product name is similar. The supplier is the same. The identifier appears in both places.</p>
+<p>Third, there are veto conditions. The date is missing. The currency is incompatible. The certificate is expired. The extraction confidence is low. The status says cancelled, denied, void, or needs review. The same identifier was copied into multiple fields and should not count as independent proof.</p>
+<p>Most teams already manage those distinctions informally. A quality manager knows that an expired certificate blocks release even if every other field looks familiar. An AP clerk knows that a same-dollar transaction from the wrong statement period should not be reconciled just because the payee name is close. The problem is that informal judgment is hard to scale and easy to lose when the work moves into software.</p>
+<p>AI can help, but only if the workflow gives negative evidence real authority.</p>
+<p>That means a match should have visible state. Suggested. Possible. Blocked. Needs review. Definitive. Rejected. It should show why the system thinks two items belong together and why it may still be forbidden from closing the loop. The reviewer should not be asked to reread every attachment from scratch. They should see the evidence packet, the blocker, and the decision the system is asking them to make.</p>
+<p>This is how trust gets built in operational AI. Not by pretending the model is always right. Not by leaving every decision to a human as if the software added no value. Trust comes from making the system consistent about when it can act and when it must stop.</p>
+<p>The ROI is not only faster matching. It is fewer false releases, fewer payment mistakes, fewer compliance surprises, and less time spent reconstructing why something was approved. A small business can start with one workflow where matching creates repeated friction: certificates to lots, invoices to purchase orders, payments to authorizations, customer files to required documents, parts to compliance packets.</p>
+<p>The first implementation does not need to be grand. Pick the workflow. Name the required evidence. Name the veto conditions. Decide which states block downstream action. Give the reviewer a short queue of exceptions instead of another folder to search.</p>
+<p>The useful reframe is this: AI should not just find matches.</p>
+<p>It should know when a match is not allowed to become true yet.</p>
+    </article>
+  </main>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH9P7FYYR1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FH9P7FYYR1');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Do Not Confuse The Task With The Attempt</title>
+  <meta name="description" content="A repair request can be assigned to the right person and still be in the wrong place operationally. That sounds like a small distinction until you try to automate it. A property manager...">
+  <link rel="stylesheet" href="../../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../../index.html">Operating Notes</a>
+    <nav aria-label="Primary">
+      <a href="../../../index.html">Articles</a>
+    </nav>
+  </header>
+  <main>
+    <article class="article-page">
+      <p class="meta">2026-08-08 · Practice</p>
+<h1>Do Not Confuse The Task With The Attempt</h1>
+<p>A repair request can be assigned to the right person and still be in the wrong place operationally.</p>
+<p>That sounds like a small distinction until you try to automate it. A property manager may have one repair request in the resident portal, another email in a shared inbox, a photo attached to the wrong message, and a maintenance lead who already texted the owner for approval. The business sees one task: fix the unit. The work underneath it may have several attempts, partial results, missing evidence, and a few places where a human needs to decide what happens next.</p>
+<p>This is where a lot of practical AI workflow design gets too thin. We give the system a task list, a status field, and a button that says &quot;run.&quot; Then we are surprised when people do not trust the result.</p>
+<p>The problem is not usually that the AI cannot perform a step. The problem is that the business cannot see what happened while the step was being performed.</p>
+<p>Take a small plating shop preparing a wastewater report. The report task may be assigned, due, and clearly owned. But the lab attachment is missing. Someone may have already emailed the lab. The AI may check the compliance folder, search the inbox, find last month&#x27;s attachment, reject it as stale, and draft a request for the current result. None of that should collapse into one field that says &quot;in progress.&quot;</p>
+<p>The operator needs a more useful record:</p>
+<p>- which system or person claimed the task - when that claim expires - what sources were checked - what evidence was found - what evidence was missing - whether the attempt can retry - whether the next step needs human approval</p>
+<p>That record is different from the task itself.</p>
+<p>The task is the business object. It is what the team already understands: repair the unit, complete the report, collect the missing document, reconcile the invoice, schedule the inspection. The attempt is the operational history of one try at doing the work.</p>
+<p>Separating the two makes AI much easier to trust.</p>
+<p>If an agent crashes halfway through checking the repair inbox, the task should not sit permanently frozen because the system thinks someone is still working on it. If two agents are running, they should not both call the same vendor because the task was visible to both. If the AI drafts the next message, the manager should be able to see why: which request it matched, which photo it used, what approval is still missing, and where the uncertainty is.</p>
+<p>That is not bureaucracy. It is the difference between automation and a new source of cleanup work.</p>
+<p>For SMB operators, the useful starting point is not &quot;Which tasks can AI do?&quot; It is &quot;Which attempts do we need to make visible?&quot;</p>
+<p>Look at the workflows where your team already loses time:</p>
+<p>- a customer issue gets handled twice because two people saw different messages - a compliance file looks complete until one attachment is missing - a follow-up is delayed because nobody knows whether the first request went out - a task is marked done, but the evidence lives in someone&#x27;s inbox</p>
+<p>Those are good AI candidates, but only if the workflow records the attempt, not just the final status.</p>
+<p>The trust model is straightforward. Let the AI claim work for a limited window. Have it show a heartbeat while it is active. Require it to write down what it checked, what it found, what it could not prove, and what action it wants to take next. Let retries happen when the failure is mechanical. Stop for a human when the failure is judgment, permission, compliance, money, or customer impact.</p>
+<p>This is also where ROI becomes more concrete. The value is not only that AI completes more tasks. The value is that fewer tasks get duplicated, fewer requests vanish between inboxes, fewer managers have to reconstruct what happened, and fewer risky steps move forward without evidence.</p>
+<p>Most businesses already have tasks. What they lack is a reliable memory of attempts.</p>
+<p>That is the practical layer AI needs before it can safely participate in operations. The reframe is simple: do not ask whether the task is automated. Ask whether every attempt is visible enough for a person to trust, retry, or stop it.</p>
+    </article>
+  </main>
+</body>
+</html>
